@@ -1,0 +1,56 @@
+<!-- Relative & absolute =父層子層
+要把子層包在父層才會一起變動 -->
+
+<div class="divBox1">
+  <div class="divBox2"></div>
+  <div class="divBox3"></div>
+
+  <div class="Space3">
+    <div class="divBox4">
+      <div class="divBox5"></div>
+      <div class="divBox6"></div>
+    </div>
+<img style = " width: 300px;height:auto; position: fixed;
+                left:50%; top:12%; z-index: 10;" src="imgWhity.jpg">
+  </div>
+</div>
+
+<!-- <div class="divWhity">
+ <img class = "withyPosition" src="imgWhity.jpg">
+</div> -->
+
+
+
+
+
+<!-- 練習2 -->
+
+<!-- 全域變數的內容要顯示在HTML上，要用兩個{}將變數名稱包起來 -->
+
+{{ textTitle }}
+
+<button>{{butName}}</button>
+
+<div Class="TitleAColor"><h1>{{TitleA}}</h1></div>
+
+<div class="TitleBColor"><h3>{{TitleB}}</h3></div>
+<br>
+<div style="width:300px; height:130px;background-color:gray;">
+ <img style ="width:50vw;" src = "{{imgHmm}}">
+</div>
+
+
+<!-- 練習3 -->
+
+<button (click)="showTitle()">按我</button>
+
+<button (click)="showTitle2()">一次變數按鈕</button>
+
+
+<!-- {{alertButton}} -->
+
+<!-- 這邊 alertButton報錯失效的原因是因為 他是區域變數
+只在程式碼TS層級裡做使用。在 HTML外面使用他沒有變數值可以用 -->
+
+<button (click)="showButton('WTF')">按我看看</button>
+
