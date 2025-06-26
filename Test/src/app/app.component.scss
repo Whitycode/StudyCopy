@@ -1,0 +1,97 @@
+.img1 {
+  width: 200px;
+  height: 200px;
+
+  margin: 0px 24px 0px 0px;
+}
+
+.img2 {
+  width: 300px;
+  height: 200px;
+}
+
+.divCss {
+  width: 524px;
+  height: 100px;
+  background-color: blue;
+
+  margin: 0px 0px 0px 24px;
+}
+
+.img3 {
+  width: 524px;
+  height: 100px;
+
+}
+
+.Space1 {
+  margin: 24px;
+}
+
+.Space2 {
+  margin: 36px 0px 36px 24px;
+}
+
+.inputA {
+  height: 20px;
+  width: 418px;
+  margin: 0px 18px 0px 24px;
+}
+
+//練習2
+
+.BackGround {
+  width: 380px;
+  height: 330px;
+  background-color: blue;
+}
+
+.wCenter {
+  text-align: center
+}
+
+.wordColor {
+  color: white
+}
+
+.divPadding {
+  padding:18px;
+}
+
+.password {
+  border-radius: 10px;
+}
+
+//練習3
+
+.flex1 {
+  height: 80px;
+  background-color: blue;
+}
+
+.flex5 {
+  height: 80px;
+  background-color: yellow;
+}
+
+.flex4{
+background-color:green;
+height:30px;
+display: flex;
+align-self: start;
+}
+
+.flex3{
+background-color:red;
+height:30px;
+display: flex;
+align-self: Center;
+margin: 0px 10px;
+}
+
+.flex2{
+background-color:greenyellow;
+height:30px;
+display: flex;
+align-self: end;
+}
