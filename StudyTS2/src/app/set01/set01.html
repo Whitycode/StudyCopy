@@ -1,0 +1,17 @@
+<div>
+  <p>等級:{{ levelStart }}</p>
+  <p>攻擊:{{ Attack }}</p>
+  <p>防禦:{{ Defense }}</p>
+  <button (click)="levelCount()">升級</button>
+</div>
+<div>
+  <p>輸入等級:{{userSet}}</p>
+    <input [(ngModel)]="userSet">
+    <button (click)="intSet();RunSet()">確認修改</button>
+
+
+</div>
+
+<div>
+  <button (click)="levelRestart()">重置</button>
+</div>
