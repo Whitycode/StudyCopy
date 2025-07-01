@@ -28,13 +28,33 @@ export class Set01 {
     this.levelStart = this.levelStart + 1;
     this.Attack = this.Attack + 3;
     this.Defense = this.Defense + 2;
+  }
 
+  // 等級降級 // 需要再 等級為 1時停止操作
+  levelDown() {
+
+    let NowLevel = Number(this.levelStart);
+    // 判斷等級是否為 1
+    // 否則等級大於 1時 可以繼續執行
+    if (NowLevel <= 1) {
+      return;
+    }
+    else {
+      this.levelStart = this.levelStart - 1;
+      this.Attack = this.Attack - 3;
+      this.Defense = this.Defense - 2;
+    }
+  }
+
+
+  levelDownT() {
+    console.log(this.levelStart);
   }
 
   //這是 input給使用者輸入的欄位
   userSet: String = "";
 
-  intSet(): void {
+  Setlevel(): void {
     console.log(this.userSet);
   }
 
@@ -42,24 +62,33 @@ export class Set01 {
   hasRun: boolean = false;
 
   RunSet() {
-  // 有執行過等於 ture 才會會執行第一格判斷
-    if (this.hasRun){
+    // 有執行過等於 ture 才會會執行第一格判斷
+    if (this.hasRun) {
+
       return;
     }
     // else其實可以不用寫 因為已經包在方法裡了
-    else{
-    // 因為我 userSet 初始使設定字串 所以要轉成數字才能計算
-    let SetNewNum
-    SetNewNum = Number(this.userSet);
-    // 雙向繫結 改變目前的等級
-    this.levelStart = Number(this.userSet);
+    else {
+      // 因為我 userSet 初始使設定字串 所以要轉成數字才能計算
+      let SetNewNum
+      SetNewNum = Number(this.userSet);
+      // 雙向繫結 改變目前的等級
+      this.levelStart = Number(this.userSet);
 
-    this.Attack = this.Attack + 3 * SetNewNum;
-    this.Defense = this.Defense + 2 * SetNewNum;
-    //執行完後要將 hasRun 改為Ture 才不會再繼續觸發這裡的判斷式
-    this.hasRun = true;
+      this.Attack = this.Attack + 3 * SetNewNum;
+      this.Defense = this.Defense + 2 * SetNewNum;
+      //執行完後要將 hasRun 改為Ture 才不會再繼續觸發這裡的判斷式
+      this.hasRun = true;
     }
+  }
 
+  // 讓修改按鈕可以再重新執行
+  RunReset() {
+    // 需要重製 hasRun 讓 RunSet() 可以再次執行
+    // 等級記得重製 不然會輸入執會疊加
+    this.hasRun = false;
+    this.levelRestart();
+    this.RunSet();
   }
 
   // 重製按鈕 全部改為初始值
