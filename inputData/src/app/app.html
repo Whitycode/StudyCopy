@@ -1,0 +1,39 @@
+
+
+
+
+
+<img style="width:20% ;" src="{{imgHmm}}">
+<!-- 專案中 app.html 起始頁面通用的元件可以寫在這裡 -->
+<!-- 這樣切換子頁面 這邊寫入的標籤組件都會在 -->
+
+
+<h3 routerLink="/first" routerLinkActive="active">切換頁面到 First</h3>
+<h3 routerLink="/second" routerLinkActive="active">切換頁面到 Second</h3>
+<h3 routerLink="/third" routerLinkActive="active">切換頁面到 Third</h3>
+
+<div class="SpanDiv"></div>
+
+<app-second [userTab] ="'Gelin'" [think] ="'再想想啊~'" (outputEmit)="showData($event)"></app-second>
+
+<div class="SpanDiv"></div>
+
+
+<div>
+  <button class="ButtonBr" (click)="changPage('/')">返回起始</button>
+</div>
+<div>
+  <button class="ButtonBr" (click)="changPage('/first')">切換頁面到 First</button>
+</div>
+<div>
+  <button class="ButtonBr" (click)="changPage('/second')">切換頁面到 Second</button>
+</div>
+<div>
+  <button class="ButtonBr" (click)="changPage('/third')">切換頁面到 Third</button>
+</div>
+
+
+<router-outlet></router-outlet>
+
+
+

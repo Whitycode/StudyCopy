@@ -1,0 +1,23 @@
+<p>third works!</p>
+
+<h2>職業選擇</h2>
+<button>法師</button>
+<button>戰士</button>
+<button>坦克</button>
+
+<br>
+<span>-------等級選擇{{job}}-------</span>
+
+<div>
+  <p>等級:{{ levelStart }}</p>
+  <p>攻擊:{{ Attack }}</p>
+  <p>防禦:{{ Defense }}</p>
+  <button (click)="levelUp()">升級</button><button (click)="levelDown()">降級</button>
+</div>
+
+<div>
+
+  <input [(ngModel)]="userSet">
+  <button (click)="CheckSet()">確認等級</button>
+
+</div>

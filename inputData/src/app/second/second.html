@@ -1,0 +1,16 @@
+<span>使用者名稱:{{memberData?.userName }}</span>
+<br>
+<span>使用者Mail:{{memberData?.userEmail}}</span>
+<br>
+<span>使用者手機:{{memberData?.userPhone}}</span>
+<br>
+
+<p>input & Outout</p>
+<input style="width:60px" [(ngModel)]="inputTest">
+<br>
+input輸入測試: {{this.inputTest}}
+<p>＠Input：{{userTab}} {{think}}</p>
+
+
+<button (click)="outputFun()">output觸發事件</button>
+<!-- output要觸發 需要有事件 -->

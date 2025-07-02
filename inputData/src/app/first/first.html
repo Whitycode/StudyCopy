@@ -1,0 +1,17 @@
+<p>first works!</p>
+
+
+<button (click)="changPage('/first/userpage')">切換頁面到 Userpage</button>
+<router-outlet></router-outlet>
+
+<!-- <a (click)="goSecond()">去第二頁，觸發填補資料</a> -->
+
+
+<h3>使用者名稱：<input [(ngModel)]="userName"></h3>
+
+<h3>使用者emaill：<input [(ngModel)]="userEmail"></h3>
+
+<h3>使用者手機：<input [(ngModel)]="userPhone"></h3>
+
+<button (click)="changPage('/second');TabName()">資料確認</button>
+<!-- button(click)=""  ""前面不能空格 -->
