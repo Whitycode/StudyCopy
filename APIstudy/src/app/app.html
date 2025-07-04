@@ -1,0 +1,68 @@
+<img style="width:20% ;" src="{{imgHmm}}">
+
+
+<div style="border: 2px solid #000;">
+  <h3>{{weatherApi.LocationsName}}</h3>
+</div>
+
+
+@for(New of weatherApi.Location;track New){
+  <br>
+  <div class="divBr"></div>
+  {{New.LocationName}}<br>
+  <div class="divBr"></div>
+
+  @for(New2 of New.WeatherElement;track New2){
+
+    {{New2.ElementName}}:
+
+<!-- 溫度,露點溫度,相對濕度,體感溫度,舒適度指數,風速,風向,3小時降雨機率,天氣現象天氣預報綜合描述 -->
+
+    {{New2.Time[0].ElementValue[0].Temperature}}
+    {{New2.Time[0].ElementValue[0].DewPoint}}
+    {{New2.Time[0].ElementValue[0].RelativeHumidity}}
+    {{New2.Time[0].ElementValue[0].ApparentTemperature}}
+    {{New2.Time[0].ElementValue[0].ComfortIndex}}
+    {{New2.Time[0].ElementValue[0].WindSpeed}}
+    {{New2.Time[0].ElementValue[0].WindDirection}}
+    {{New2.Time[0].ElementValue[0].ProbabilityOfPrecipitation}}
+    {{New2.Time[0].ElementValue[0].Weather}}
+
+    <!-- 完整描述 -->
+    <!-- 用if esle分開 -->
+    {{New2.Time[0].ElementValue[0].WeatherDescription}}
+    <br>
+
+    @for(New3 of New2.Time;track New3){
+      <!-- {{New3.ElementValue[0].Temperature}} -->
+
+    }
+
+  }
+}
+<div class="divBr"></div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h3>資料位置參考</h3>
+<!-- 高雄市 鹽埕區 溫度 -->
+<!-- 2025-07-04T00:00:00+08:00 29 -->
+<!-- this.weatherApi = res.records.Locations[0] -->
+{{weatherApi.LocationsName}}
+{{weatherApi.Location[0].LocationName}}
+{{weatherApi.Location[0].WeatherElement[0].ElementName}}
+<br>
+{{weatherApi.Location[0].WeatherElement[0].Time[0].DataTime}}
+{{weatherApi.Location[0].WeatherElement[0].Time[0].ElementValue[0].Temperature}}
+<!-- 多雲。降雨機率10%。溫度攝氏29度。悶熱。偏南風 平均風速1-2級(每秒2公尺)。相對濕度82至83%。 -->
+{{weatherApi.Location[0].WeatherElement[9].Time[0].ElementValue[0].WeatherDescription}}
+
+
+<!-- {{weatherApi.LocationsName}}
+{{weatherApi.Location[0].LocationName}} -->
