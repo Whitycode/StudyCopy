@@ -32,14 +32,15 @@ export class App {
   WhatTime!: any;
   TimeIs!: any;
   // 時間點 全域變數
-  TimeNumber!:any;
+  TimeNumber!: any;
 
   // 轉換變數 傳回數據;
-  ForHTML! :any;
+  ForHTML!: any;
   LocationNumber = 0;
   HtmlForTime = 0;
-
-
+  // 按鈕檢測器
+  ButtonClick = false;
+xxx : any;
 
   ngOnInit(): void {
     // 呼叫服務中的方法 .subscribe 是固定寫法 訂閱
@@ -165,6 +166,7 @@ export class App {
 
 
   TabButton(HTMLtoTSButton: any) {
+    this.ButtonClick = true;
 
     // 這裡是
     // 地區位置測試區間
@@ -180,7 +182,7 @@ export class App {
         console.log("現在按鈕的位置是:", HTMLtoTSButton.LocationName, "是第", i, "位置");
         this.ButtonNumber = i;
         this.ShowButtonName = String(HTMLtoTSButton.LocationName);
-        this.LocationNumber = i ;
+        this.LocationNumber = i;
       }
     }
 
@@ -231,8 +233,8 @@ export class App {
   }
 
 
-  NewDataHtml(){
-    this.ForHTML =this.LocationAPI.Location[this.ButtonNumber].WeatherElement[0].Time[this.TimeNumber].Temperature;
+  NewDataHtml() {
+    this.ForHTML = this.LocationAPI.Location[this.ButtonNumber].WeatherElement[0].Time[this.TimeNumber].Temperature;
   }
 
 
@@ -253,8 +255,46 @@ export class App {
   //     console.log("時間點相等");
   //   }
 
+  Datr(){
+    this.xxx = 2;
+  }
+
+
+  DataForHTML() {
+    this.LocationAPI.Location[this.LocationNumber].WeatherElement[0].Time[this.HtmlForTime].ElementValue[0].Temperature
+
+    this.LocationAPI.Location[this.LocationNumber].WeatherElement[1].Time[this.HtmlForTime].ElementValue[0].DewPoint
+
+    this.LocationAPI.Location[this.LocationNumber].WeatherElement[2].Time[this.HtmlForTime].ElementValue[0].RelativeHumidity
+
+    this.LocationAPI.Location[this.LocationNumber].WeatherElement[3].Time[this.HtmlForTime].ElementValue[0].ApparentTemperature
+
+    this.LocationAPI.Location[this.LocationNumber].WeatherElement[4].Time[this.HtmlForTime].ElementValue[0].ComfortIndex
+
+    this.LocationAPI.Location[this.LocationNumber].WeatherElement[5].Time[this.HtmlForTime].ElementValue[0].WindSpeed
+
+    this.LocationAPI.Location[this.LocationNumber].WeatherElement[6].Time[this.HtmlForTime].ElementValue[0].WindDirection
+
+    this.LocationAPI.Location[this.LocationNumber].WeatherElement[7].Time[this.HtmlForTime].ElementValue[0].ProbabilityOfPrecipitation
+
+    this.LocationAPI.Location[this.LocationNumber].WeatherElement[8].Time[this.HtmlForTime].ElementValue[0].Weather
+
+    this.LocationAPI.Location[this.LocationNumber].WeatherElement[9].Time[this.HtmlForTime].ElementValue[0].WeatherDescription
+
+
+  }
+
+
+
+
+
+
 
 
 
 
 }
+
+
+
+

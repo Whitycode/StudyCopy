@@ -1,14 +1,62 @@
 <img style="width:20% ;" src="{{imgHmm}}">
 
+<div class = "bodyDiv">
+</div>
 
-<div style="border: 2px solid #000;">
-  <h3>{{LocationAPI.LocationsName}}</h3>
+<div>
+  <h3 class="CityDiv">{{LocationAPI.LocationsName}}</h3>
+</div>
+
+<!-- 這個是地區 & 時間位置 -->
+<!-- {{ButtonNumber}}{{TimeNumber}} -->
+
+<h3>現在的地區是：{{ShowButtonName}}</h3>
+<h4>顯示時間點：{{TimeIs}}</h4>
+
+<div>
+  <div class = "divBackground">
+    <div class="divImg">
+      我是圖片位置
+    </div>
+    <div>
+      <h5 class ="ValueDiv">
+      溫度:{{LocationAPI.Location[LocationNumber].WeatherElement[0].Time[HtmlForTime].ElementValue[0].Temperature}}
+      <br>
+      露點溫度:{{LocationAPI.Location[LocationNumber].WeatherElement[1].Time[HtmlForTime].ElementValue[0].DewPoint}}
+      <br>
+      相對濕度:{{LocationAPI.Location[LocationNumber].WeatherElement[2].Time[HtmlForTime].ElementValue[0].RelativeHumidity}}
+      <br>
+      體感溫度:{{LocationAPI.Location[LocationNumber].WeatherElement[3].Time[HtmlForTime].ElementValue[0].ApparentTemperature}}
+      <br>
+      舒適度指數:{{LocationAPI.Location[LocationNumber].WeatherElement[4].Time[HtmlForTime].ElementValue[0].ComfortIndex}}
+      <br>
+      風速:{{LocationAPI.Location[LocationNumber].WeatherElement[5].Time[HtmlForTime].ElementValue[0].WindSpeed}}
+      <br>
+      風向:{{LocationAPI.Location[LocationNumber].WeatherElement[6].Time[HtmlForTime].ElementValue[0].WindDirection}}
+      <br>
+      3小時降雨機率:{{LocationAPI.Location[LocationNumber].WeatherElement[7].Time[HtmlForTime].ElementValue[0].ProbabilityOfPrecipitation}}
+      <br>
+      天氣現象:{{LocationAPI.Location[LocationNumber].WeatherElement[8].Time[HtmlForTime].ElementValue[0].Weather}}
+      <div style="border: 2px solid #000;">
+      天氣預報綜合描述:<br>{{LocationAPI.Location[LocationNumber].WeatherElement[9].Time[HtmlForTime].ElementValue[0].WeatherDescription}}
+      </div>
+    </h5>
+  </div>
+</div>
+
+<div class ="divBar">
+  @for(test of LocationAPI.Location;track test){
+  <br>
+  <button (click)="TabButton(test);NewDataHtml()">
+    {{test.LocationName}}
+  </button>
+  }
 </div>
 
 
 
-<h3>現在的地區是：{{ShowButtonName}}{{ButtonNumber}}</h3>
-<h3>顯示時間點：{{TimeIs}}{{TimeNumber}}</h3>
+
+</div>
 
 
 <!-- 按鈕時間測試:
@@ -19,50 +67,54 @@
 } -->
 
 
-<div>
+<!-- <div> 這裡是按鈕
 @for(test of LocationAPI.Location;track test){
 <br>
 <button (click)="TabButton(test);NewDataHtml()">
   {{test.LocationName}}
 </button>
 }
-</div>
+</div> -->
 
+<!--
 @for(ValueName of SameSetTime.WeatherElement;track ValueName){
   {{ValueName.ElementName}}:
+  @if(ButtonClick){
+  }
   <br>
-}
+} -->
 
 
-元素
+
+<!-- 這裡是元素表
 <br>
 {{ButtonNumber}}{{TimeNumber}}
 <br>
-{{LocationAPI.Location[LocationNumber].WeatherElement[0].Time[HtmlForTime].ElementValue[0].Temperature}}
+溫度:{{LocationAPI.Location[LocationNumber].WeatherElement[0].Time[HtmlForTime].ElementValue[0].Temperature}}
 <br>
-{{LocationAPI.Location[LocationNumber].WeatherElement[1].Time[HtmlForTime].ElementValue[0].DewPoint}}
+露點溫度:{{LocationAPI.Location[LocationNumber].WeatherElement[1].Time[HtmlForTime].ElementValue[0].DewPoint}}
 <br>
-{{LocationAPI.Location[LocationNumber].WeatherElement[2].Time[HtmlForTime].ElementValue[0].RelativeHumidity}}
+相對濕度:{{LocationAPI.Location[LocationNumber].WeatherElement[2].Time[HtmlForTime].ElementValue[0].RelativeHumidity}}
 <br>
-{{LocationAPI.Location[LocationNumber].WeatherElement[3].Time[HtmlForTime].ElementValue[0].ApparentTemperature}}
+體感溫度:{{LocationAPI.Location[LocationNumber].WeatherElement[3].Time[HtmlForTime].ElementValue[0].ApparentTemperature}}
 <br>
-{{LocationAPI.Location[LocationNumber].WeatherElement[4].Time[HtmlForTime].ElementValue[0].ComfortIndex}}
+舒適度指數:{{LocationAPI.Location[LocationNumber].WeatherElement[4].Time[HtmlForTime].ElementValue[0].ComfortIndex}}
 <br>
-{{LocationAPI.Location[LocationNumber].WeatherElement[5].Time[HtmlForTime].ElementValue[0].WindSpeed}} xxx
+風速:{{LocationAPI.Location[LocationNumber].WeatherElement[5].Time[HtmlForTime].ElementValue[0].WindSpeed}}
 <br>
-{{LocationAPI.Location[LocationNumber].WeatherElement[6].Time[HtmlForTime].ElementValue[0].WindDirection}}
+風向:{{LocationAPI.Location[LocationNumber].WeatherElement[6].Time[HtmlForTime].ElementValue[0].WindDirection}}
 <br>
-{{LocationAPI.Location[LocationNumber].WeatherElement[7].Time[HtmlForTime].ElementValue[0].ProbabilityOfPrecipitation}}
+3小時降雨機率:{{LocationAPI.Location[LocationNumber].WeatherElement[7].Time[HtmlForTime].ElementValue[0].ProbabilityOfPrecipitation}}
 <br>
-{{LocationAPI.Location[LocationNumber].WeatherElement[8].Time[HtmlForTime].ElementValue[0].Weather}}
+天氣現象:{{LocationAPI.Location[LocationNumber].WeatherElement[8].Time[HtmlForTime].ElementValue[0].Weather}}
 <div style="border: 2px solid #000;">
-{{LocationAPI.Location[LocationNumber].WeatherElement[9].Time[HtmlForTime].ElementValue[0].WeatherDescription}}
-</div>
+天氣預報綜合描述:{{LocationAPI.Location[LocationNumber].WeatherElement[9].Time[HtmlForTime].ElementValue[0].WeatherDescription}}
+</div> -->
 
 
 
 <br>
-選擇時間:
+選擇時間區間:
 <br>
 @for(TimeButton of SameSetTime.WeatherElement[0].Time;track TimeButton){
    <button (click)="TabButton(TimeButton)">
