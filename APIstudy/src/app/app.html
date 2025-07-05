@@ -2,67 +2,105 @@
 
 
 <div style="border: 2px solid #000;">
-  <h3>{{weatherApi.LocationsName}}</h3>
+  <h3>{{LocationAPI.LocationsName}}</h3>
 </div>
 
 
-@for(New of weatherApi.Location;track New){
-  <br>
-  <div class="divBr"></div>
-  {{New.LocationName}}<br>
-  <div class="divBr"></div>
 
-  @for(New2 of New.WeatherElement;track New2){
+<h3>現在的地區是：{{ShowButtonName}}{{ButtonNumber}}</h3>
+<h3>顯示時間點：{{TimeIs}}{{TimeNumber}}</h3>
 
-    {{New2.ElementName}}:
 
-<!-- 溫度,露點溫度,相對濕度,體感溫度,舒適度指數,風速,風向,3小時降雨機率,天氣現象天氣預報綜合描述 -->
+<!-- 按鈕時間測試:
+{{TimeIs}}
+<br>
+@if(TimeIs == "2025-07-06T02:00:00+08:00"){
+  {{TimeIs}}
+} -->
 
-    {{New2.Time[0].ElementValue[0].Temperature}}
-    {{New2.Time[0].ElementValue[0].DewPoint}}
-    {{New2.Time[0].ElementValue[0].RelativeHumidity}}
-    {{New2.Time[0].ElementValue[0].ApparentTemperature}}
-    {{New2.Time[0].ElementValue[0].ComfortIndex}}
-    {{New2.Time[0].ElementValue[0].WindSpeed}}
-    {{New2.Time[0].ElementValue[0].WindDirection}}
-    {{New2.Time[0].ElementValue[0].ProbabilityOfPrecipitation}}
-    {{New2.Time[0].ElementValue[0].Weather}}
 
-    <!-- 完整描述 -->
-    <!-- 用if esle分開 -->
-    {{New2.Time[0].ElementValue[0].WeatherDescription}}
-    <br>
-
-    @for(New3 of New2.Time;track New3){
-      <!-- {{New3.ElementValue[0].Temperature}} -->
-
-    }
-
-  }
+<div>
+@for(test of LocationAPI.Location;track test){
+<br>
+<button (click)="TabButton(test);NewDataHtml()">
+  {{test.LocationName}}
+</button>
 }
-<div class="divBr"></div>
+</div>
+
+@for(ValueName of SameSetTime.WeatherElement;track ValueName){
+  {{ValueName.ElementName}}:
+  <br>
+}
 
 
+元素
 <br>
+{{ButtonNumber}}{{TimeNumber}}
 <br>
+{{LocationAPI.Location[LocationNumber].WeatherElement[0].Time[HtmlForTime].ElementValue[0].Temperature}}
 <br>
+{{LocationAPI.Location[LocationNumber].WeatherElement[1].Time[HtmlForTime].ElementValue[0].DewPoint}}
 <br>
+{{LocationAPI.Location[LocationNumber].WeatherElement[2].Time[HtmlForTime].ElementValue[0].RelativeHumidity}}
 <br>
+{{LocationAPI.Location[LocationNumber].WeatherElement[3].Time[HtmlForTime].ElementValue[0].ApparentTemperature}}
 <br>
+{{LocationAPI.Location[LocationNumber].WeatherElement[4].Time[HtmlForTime].ElementValue[0].ComfortIndex}}
+<br>
+{{LocationAPI.Location[LocationNumber].WeatherElement[5].Time[HtmlForTime].ElementValue[0].WindSpeed}} xxx
+<br>
+{{LocationAPI.Location[LocationNumber].WeatherElement[6].Time[HtmlForTime].ElementValue[0].WindDirection}}
+<br>
+{{LocationAPI.Location[LocationNumber].WeatherElement[7].Time[HtmlForTime].ElementValue[0].ProbabilityOfPrecipitation}}
+<br>
+{{LocationAPI.Location[LocationNumber].WeatherElement[8].Time[HtmlForTime].ElementValue[0].Weather}}
+<div style="border: 2px solid #000;">
+{{LocationAPI.Location[LocationNumber].WeatherElement[9].Time[HtmlForTime].ElementValue[0].WeatherDescription}}
+</div>
+
+
+
+<br>
+選擇時間:
+<br>
+@for(TimeButton of SameSetTime.WeatherElement[0].Time;track TimeButton){
+   <button (click)="TabButton(TimeButton)">
+   {{TimeButton.DataTime}}
+   </button>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h3>資料位置參考</h3>
 <!-- 高雄市 鹽埕區 溫度 -->
 <!-- 2025-07-04T00:00:00+08:00 29 -->
-<!-- this.weatherApi = res.records.Locations[0] -->
-{{weatherApi.LocationsName}}
-{{weatherApi.Location[0].LocationName}}
-{{weatherApi.Location[0].WeatherElement[0].ElementName}}
+<!-- this.LocationAPI = res.records.Locations[0] -->
+{{LocationAPI.LocationsName}}
+{{LocationAPI.Location[0].LocationName}}
+{{LocationAPI.Location[0].WeatherElement[0].ElementName}}
 <br>
-{{weatherApi.Location[0].WeatherElement[0].Time[0].DataTime}}
-{{weatherApi.Location[0].WeatherElement[0].Time[0].ElementValue[0].Temperature}}
+{{LocationAPI.Location[0].WeatherElement[0].Time[0].DataTime}}
+{{LocationAPI.Location[0].WeatherElement[0].Time[0].ElementValue[0].Temperature}}
 <!-- 多雲。降雨機率10%。溫度攝氏29度。悶熱。偏南風 平均風速1-2級(每秒2公尺)。相對濕度82至83%。 -->
-{{weatherApi.Location[0].WeatherElement[9].Time[0].ElementValue[0].WeatherDescription}}
+{{LocationAPI.Location[0].WeatherElement[9].Time[0].ElementValue[0].WeatherDescription}}
 
 
-<!-- {{weatherApi.LocationsName}}
-{{weatherApi.Location[0].LocationName}} -->
+<!-- {{LocationAPI.LocationsName}}
+{{LocationAPI.Location[0].LocationName}} -->
