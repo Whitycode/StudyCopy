@@ -11,7 +11,7 @@ import { RouterOutlet } from '@angular/router';
 export class App {
   protected title = 'APIstudy';
   imgHmm: string = "hummm.jpg";
-
+  imgWolf: string = "wolf.png"
 
   //建構式宣告要使用的服務
   constructor(private httpClientServices: HttpClientServices) { }
