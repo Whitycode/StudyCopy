@@ -38,6 +38,28 @@
   z-index: 1;
 }
 
+.divTime {
+  width: 272px;
+  height: 324px;
+  background-color: #d6dce0;
+  position: relative;
+  left: 0px;
+  z-index: 1;
+}
+
+.divShow{
+  width: 332px;
+  height: 90px;
+  background-color: #cedce6;
+  position: relative;
+  left: 0px;
+  z-index: 1;
+  margin:10px 0px;
+  opacity: 0.7
+
+}
+
+
 .divImg{
    width: 180px;
   height: 200px;
@@ -71,3 +93,12 @@
   background-color: rgb(180, 212, 221)
 
 }
+
+.BackgroundImg {
+  position: fixed;
+  width: 100v;
+  height: 100vh;
+  z-index: 0;
+  opacity: 0.4; /* 透明度 */
+}
+
