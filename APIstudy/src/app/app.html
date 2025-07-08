@@ -37,11 +37,11 @@
         <br>
         風向:{{LocationAPI.Location[LocationNumber].WeatherElement[6].Time[HtmlForTime].ElementValue[0].WindDirection}}
         <br>
-        3小時降雨機率:{{LocationAPI.Location[LocationNumber].WeatherElement[7].Time[HtmlForTime].ElementValue[0].ProbabilityOfPrecipitation}}
+        3小時降雨機率:{{LocationAPI.Location[LocationNumber].WeatherElement[7].Time[ThreeValue].ElementValue[0].ProbabilityOfPrecipitation}}
         <br>
-        天氣現象:{{LocationAPI.Location[LocationNumber].WeatherElement[8].Time[HtmlForTime].ElementValue[0].Weather}}
+        天氣現象:{{LocationAPI.Location[LocationNumber].WeatherElement[8].Time[ThreeValue].ElementValue[0].Weather}}
         <div style="border: 2px solid #000;">
-          天氣預報綜合描述:<br>{{LocationAPI.Location[LocationNumber].WeatherElement[9].Time[HtmlForTime].ElementValue[0].WeatherDescription}}
+          天氣預報綜合描述:<br>{{LocationAPI.Location[LocationNumber].WeatherElement[9].Time[ThreeValue].ElementValue[0].WeatherDescription}}
         </div>
       </h5>
     </div>
@@ -119,16 +119,18 @@
 
 <br>
 <div class="divTime">
-
   <h4 style ="position: relative;top:2px;left:8px;margin:6px">
-    {{SameSetTime.WeatherElement[0].Time[0].DataTime.slice(0,10)}}
+    {{SameSetTime.WeatherElement[0].Time[HtmlForTime].DataTime.slice(0,10)}}
     選擇時間區間:
   </h4>
 
-  @for(TimeButton of SameSetTime.WeatherElement[0].Time;track TimeButton){
-  <button (click)="TabButton(TimeButton)">
-    {{TimeButton.DataTime.slice(11,19)}}
-  </button>
+  @for(TimeButton of SameSetTime.WeatherElement[0].Time; let i = $index;track TimeButton){
+    @if(i<32){
+      <button (click)="TabButton(TimeButton)">
+      {{TimeButton.DataTime.slice(11,19)}}
+      </button>
+    }
+
   }
 </div>
 

@@ -30,7 +30,6 @@ export class App {
 
   // 時間點 全域變數
   SameSetTime!: any;
-  WhatTime!: any;
   TimeIs!: any;
   // 時間點 全域變數
   TimeNumber!: any;
@@ -39,9 +38,10 @@ export class App {
   ForHTML!: any;
   LocationNumber = 0;
   HtmlForTime = 0;
+  ThreeValue = 0;
   // 按鈕檢測器
   ButtonClick = false;
-xxx : any;
+
 
   ngOnInit(): void {
     // 呼叫服務中的方法 .subscribe 是固定寫法 訂閱
@@ -143,6 +143,7 @@ xxx : any;
 
         // WeatherElement 改變 溫度 濕度 舒適度指數 風速 降雨機率 天氣預報綜合描述 ...等選項
 
+
         console.log("溫度對應日期:", res.records.Locations[0].Location[0].WeatherElement[0].Time[0].DataTime);
 
 
@@ -215,7 +216,21 @@ xxx : any;
         console.log("現在的時間點是第", i, "筆");
         this.TimeNumber = i;
         this.HtmlForTime = i;
+        console.log("HtmlForTime",this.HtmlForTime);
+        // 3小時降雨機率,天氣現象,天氣預報綜合描述 是 3小時算一次
+        // 這邊設定 前 3筆資料相同
+        // 第32筆資料後面時數都是3小時跳階 所以資料後面會有問題
+        if (this.HtmlForTime % 3 > 0){
+          this.ThreeValue = this.HtmlForTime - this.HtmlForTime  % 3
+          console.log("更改時間",this.ThreeValue);
+          }
+          else{
+            // 要把值換回來 不然 ThreeValue 會 等於0
+            this.ThreeValue = this.HtmlForTime;
+          }
+
       }
+
     }
     // 我要抓出來的資料
     console.log(this.ButtonNumber);
@@ -231,6 +246,7 @@ xxx : any;
 
     // 我要抓出來的資料
 
+
   }
 
 
@@ -238,6 +254,9 @@ xxx : any;
     this.ForHTML = this.LocationAPI.Location[this.ButtonNumber].WeatherElement[0].Time[this.TimeNumber].Temperature;
   }
 
+
+  // 3小時降雨機率,天氣現象,天氣預報綜合描述 其實是錯的
+  // 因為是每3小時算一次,按鈕會跳過 2個小時
 
   // // 天氣檢測 第 1 ~ 6 是用 DataTime
   // // 先寫到 第 6 點 後面是每 3小 抓一次 另外寫起始點 後面不變
@@ -256,9 +275,7 @@ xxx : any;
   //     console.log("時間點相等");
   //   }
 
-  Datr(){
-    this.xxx = 2;
-  }
+
 
 
   DataForHTML() {
