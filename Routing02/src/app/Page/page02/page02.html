@@ -1,0 +1,35 @@
+<p>page02 works!</p>
+
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+  <!-- 用迴圈去抓陣列中 JSON.path的檔案名稱 -->
+  @for (link of links; track link) {
+    <!-- link > link.path -->
+    <!-- 使用 routerLink將每個頁面底下的網址路徑做更改 -->
+    <!-- 這裡是改寫 routerLink & routerLinkActive 的寫法 -->
+    <a mat-tab-link
+      (click)="activeLink = link.path"
+      [active]="activeLink == link.path"
+
+      [routerLink]="link.pathUrl"> {{link.path}} </a>
+
+    }
+  <!-- <a mat-tab-link disabled>Disabled Link</a> -->
+</nav>
+<!-- 這裡面是呈現 Tabs選項的內容 -->
+<mat-tab-nav-panel #tabPanel>
+  <router-outlet></router-outlet>
+</mat-tab-nav-panel>
+
+<!-- <button matButton="elevated" class="example-action-button" (click)="addLink()">
+  Add link
+</button> -->
+
+
+<!-- 這裡次測試 page02中 使用 First子頁面 -->
+
+<!-- 底下是同樣的路由寫法 -->
+<!-- <h3 routerLink="./first" routerLinkActive="active">First</h3> -->
+<!-- <h3 routerLink="/page02/first" routerLinkActive="active">First</h3> -->
+<!-- <router-outlet></router-outlet> -->
+
+

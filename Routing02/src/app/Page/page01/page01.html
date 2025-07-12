@@ -1,0 +1,33 @@
+<p>page01 works!</p>
+
+<!-- 日期選擇器 -->
+<label for = "DatePicker">日期選擇器: </label>
+<input type ="date" id = "dayPicker" name = "chooseday">
+
+<br>
+
+<label for = "DatePicker2">日期選擇器: </label>
+<!-- min & max 可以限制初始日期 與 結束日期 -->
+<!-- 注意格式 yyyy-mm-dd -->
+<br>
+<input type ="date" [(ngModel)]="today" min="2025-07-01" max="2025-07-27">
+<br>
+<!-- 只有顯示 年/月 是因為有設定上下限 所以固定了 -->
+<input type ="date" min="2025-07-01" max="2025-08-27">
+<br>
+<input type ="date" min = {{today}} >
+
+<!-- <br>
+<label>其餘日期選擇器樣式</label>
+<br>
+<input type ="month" min = {{today}} >
+<br>
+<input type ="time" min = {{today}} >
+<br>
+<input type ="datetime-local" min = {{today}} >
+<br>
+<input type ="week" min = {{today}} >
+ -->
+
+<br>
+<input type ="date" min = {{today}} >

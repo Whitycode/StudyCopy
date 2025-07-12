@@ -1,0 +1,24 @@
+
+<!-- <app-page01></app-page01> -->
+<!-- <app-page02></app-page02> -->
+<!-- <app-page03></app-page03> -->
+
+
+
+<h3 routerLink="/page01" routerLinkActive="active">Page01 日期選擇器</h3>
+<h3 routerLink="/page02" routerLinkActive="active">Page02 Tabs頁籤功能</h3>
+<h3 routerLink="/Table01" routerLinkActive="active">Table01 模糊搜尋</h3>
+
+
+<h4 [ngClass] = "{'ngDo': changeBoolean()}">ngClass動態呈現</h4>
+<button [ngClass] = "{'ngDo':  booleanNgCss != false}"><h4 style="margin:2px">ngClass動態呈現</h4></button>
+<br>
+<br>
+<button (click) ="changeNgClass()">變更動態呈現</button>
+
+
+<!-- router-outlet 是呈現畫面用的標籤 -->
+<router-outlet></router-outlet>
+
+
+
