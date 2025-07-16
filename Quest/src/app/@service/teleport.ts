@@ -12,8 +12,6 @@ export class Teleport {
   userInput:string = "";
 
   IntData:string = "";
-  RadioData:string = "";
-  CheckData:string = "";
 
   constructor() { }
 }

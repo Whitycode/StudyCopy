@@ -15,6 +15,7 @@ export class Preview {
   userInput!:string;
 
 
+
   constructor(private Teleport: Teleport) { }
 
   ngOnInit(): void {
@@ -23,6 +24,8 @@ export class Preview {
     this.userEmail = this.Teleport.userEmail;
 
     this.userInput = this.Teleport.userInput;
+
+
 
   }
 

@@ -1,7 +1,7 @@
 <p>create-page works!</p>
 
 
-
+<!-- 輸入框 -->
 
  <button (click)="addButton()">+</button>
 <div>
@@ -24,10 +24,9 @@
 
 <br>
 <br>
-<br>
 
 
-
+<!-- 單選題 -->
 
 <button (click)="addRadio()" class = "addButton">+ 新增單選題</button>
 <br>
@@ -45,7 +44,6 @@
   <br>
 
 
-  <!-- 修改選項同步選取的問題  -->
   @for (newRadio of data.options;track $index; let optionIndex = $index) {
     <input
       type="radio"
@@ -54,9 +52,43 @@
       [(ngModel)]="RadioQuestions[questIndex].value"
       >
     <input [(ngModel)]="RadioQuestions[questIndex].options[optionIndex]" style="width:100px">
-    <button (click)="deleteOption(questIndex, optionIndex)" style="margin:0px 6px">-</button>
+    <button (click)="DeleteRdOption(questIndex, optionIndex)" style="margin:0px 6px">-</button>
     <br>
   }
   <br>
 }
+<br>
+
+
+<!-- 複選題 -->
+
+<button (click)="addCheckBox()">+ 新增複選題</button>
+<br>
+@for (data of CheckboxQuestions;track $index; let questIndex = $index){
+  <input [(ngModel)]="CheckboxQuestions[questIndex].name" placeholder="題目名稱" style="width:150px"> -
+  <button (click)="DeleteCbQuest(questIndex)">刪除問題</button>
+  <br>
+
+
+  <span>新增選項:
+    <button (click)="addCheckboxOption(questIndex)">+</button>
+    {{questIndex}}
+    {{CheckboxV}}
+  </span>
+  <br>
+  @for (newCheckbox of data.options;track $index; let optionIndex = $index) {
+    <input
+      type="checkbox"
+      [name]="'checkbox_' + questIndex"
+      [value]="CheckboxQuestions[questIndex].options[optionIndex]"
+      [(ngModel)]="CheckboxQuestions[questIndex].selected[optionIndex]"
+      >
+
+
+    <input [(ngModel)]="CheckboxQuestions[questIndex].options[optionIndex]" style="width:100px">
+    <button (click)="DeleteCbOption(questIndex, optionIndex)" style="margin:0px 6px">-</button>
+    <br>
+  }
+}
+
 
