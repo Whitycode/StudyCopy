@@ -1,0 +1,62 @@
+<p>create-page works!</p>
+
+
+
+
+ <button (click)="addButton()">+</button>
+<div>
+  <br>
+  @for( data of buttons;track data; ){
+  <button>{{buttonName}} {{ null }}</button>
+  }
+</div>
+
+
+ <button (click)="addInput()"class="addButton" >+ 新增輸入框</button>
+  <br>
+  @for( data of Inputs;track data; let i = $index){
+    <input [(ngModel)]="userIntName[i]" style = "width:60px" placeholder="題目名稱">
+    {{NewInputName}} <input [(ngModel)]="InputAdd[i]" >
+    <button (click)="DeleteInt(i)" style="margin:0px 6px">-</button>
+    <br>
+}
+<button (click)="userCheck()"style="margin:6px 0px">確認填寫</button>
+
+<br>
+<br>
+<br>
+
+
+
+
+<button (click)="addRadio()" class = "addButton">+ 新增單選題</button>
+<br>
+<!-- $index 是讓標籤產生唯一值 只會在方法內生效 所以下面兩個迴圈不會重疊 -->
+@for (data of RadioQuestions;track $index; let questIndex = $index){
+  <input [(ngModel)]="RadioQuestions[questIndex].name" placeholder="題目名稱" style="width:150px"> -
+  <button (click)="DeleteRdQuest(questIndex)">刪除問題</button>
+  <br>
+
+  <span>新增選項:
+    <button (click)="addOption(questIndex)">+</button>
+    {{questIndex}}
+    {{RadioV}}
+  </span>
+  <br>
+
+
+  <!-- 修改選項同步選取的問題  -->
+  @for (newRadio of data.options;track $index; let optionIndex = $index) {
+    <input
+      type="radio"
+      [name]="'question' + questIndex"
+      [value]="RadioQuestions[questIndex].options[optionIndex]"
+      [(ngModel)]="RadioQuestions[questIndex].value"
+      >
+    <input [(ngModel)]="RadioQuestions[questIndex].options[optionIndex]" style="width:100px">
+    <button (click)="deleteOption(questIndex, optionIndex)" style="margin:0px 6px">-</button>
+    <br>
+  }
+  <br>
+}
+

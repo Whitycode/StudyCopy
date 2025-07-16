@@ -1,0 +1,33 @@
+<p>test works!</p>
+
+<h4>姓名: <input type="text" [(ngModel)]="userName"></h4>
+<h4>電話: <input type="number" [(ngModel)]="userPhone"></h4>
+<h4>郵箱: <input type="text" [(ngModel)]="userEmail"></h4>
+
+<button (click)="TestName()">資料輸入測試</button>
+
+<h4>問卷說明：{{QusetTest}}</h4>
+
+
+
+
+<h4>Input 輸入回答:</h4>
+<input class="intSize" (keyup)="inputText()" [(ngModel)]="userInput">
+<button (click)="SeandJSON()">確認送出</button>
+<button (click)="ClearJSON()">清除陣列</button>
+<br>
+
+<h4>Radio 選項問題:</h4>
+<input type="radio" name="Radio1" value="R1" [(ngModel)]="RadioClick">選項一<br>
+<input type="radio" name="Radio1" value="R2" [(ngModel)]="RadioClick">選項二<br>
+
+
+<h4>Checkbox 複選問題:</h4>
+
+
+<input type="checkbox" [(ngModel)]="CheckDone3">勾選框三
+
+<br>
+
+<br>
+<button routerLink="/" routerLinkActive="active">回到首頁</button>
