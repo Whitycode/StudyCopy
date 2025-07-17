@@ -1,17 +1,15 @@
-import { FormsModule } from '@angular/forms';
-import { Teleport } from './../../@service/teleport';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-preview',
-  imports: [
-    FormsModule
-  ],
-  templateUrl: './preview.html',
-  styleUrl: './preview.scss'
+  selector: 'app-toolbox',
+  imports: [ FormsModule],
+  templateUrl: './toolbox.html',
+  styleUrl: './toolbox.scss'
 })
-export class Preview {
-  userName!: string;
+export class Toolbox {
+
+ userName!: string;
   userPhone!: string;
   userEmail!: string;
 
@@ -83,42 +81,5 @@ export class Preview {
         boolean: false
       }
     ];
-
-
-
-  constructor(private Teleport: Teleport) { }
-
-
-
-
-
-  userNamex: string = '';
-  age: number = 18;
-  agree: boolean = false;
-  tags: string[] = ['Angular', 'TypeScript'];
-  formData = {
-    email: '',
-    password: ''
-  };
-
-
-
-  checkbutton() {
-    // [(ngModel)] 不需要替換 就會傳值進來了
-    console.log(this.userNamex);
-  }
-
-
-  ngOnInit(): void {
-    this.userName = this.Teleport.userName;
-    this.userPhone = this.Teleport.userPhone;
-    this.userEmail = this.Teleport.userEmail;
-
-    this.userInput = this.Teleport.userInput;
-
-
-
-
-  }
 
 }

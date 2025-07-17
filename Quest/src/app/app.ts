@@ -14,6 +14,9 @@ import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/rou
 export class App {
   protected title = 'Quest';
 
+  imgJason:string="jason-statham.jpg"
+
+
   constructor(private router:Router){}
 
  ngOnInit() {

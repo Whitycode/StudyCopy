@@ -3,6 +3,7 @@ import { CreatePage } from './Page/create-page/create-page';
 import { Home } from './Page/home/home';
 import { Test } from './Page/test/test';
 import { Preview } from './Page/preview/preview';
+import { Toolbox } from './Page/toolbox/toolbox';
 
 export const routes: Routes = [
   // 這是綁定首頁
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: "createPage", component: CreatePage },
   { path: "Test", component: Test },
   // 之後把 Preview 綁成子路由
-  { path: "preview", component: Preview }
+  { path: "preview", component: Preview },
+  { path: "Toolbox", component: Toolbox }
 ];
