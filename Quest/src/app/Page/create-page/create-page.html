@@ -79,7 +79,7 @@
   @for (newCheckbox of data.options;track $index; let optionIndex = $index) {
     <input
       type="checkbox"
-      [name]="'checkbox_' + questIndex"
+      [name]="'checkbox' + questIndex"
       [value]="CheckboxQuestions[questIndex].options[optionIndex]"
       [(ngModel)]="CheckboxQuestions[questIndex].selected[optionIndex]"
       >

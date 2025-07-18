@@ -4,6 +4,7 @@ import { Home } from './Page/home/home';
 import { Test } from './Page/test/test';
 import { Preview } from './Page/preview/preview';
 import { Toolbox } from './Page/toolbox/toolbox';
+import { ButtonPage } from './Page/button-page/button-page';
 
 export const routes: Routes = [
   // 這是綁定首頁
@@ -13,5 +14,7 @@ export const routes: Routes = [
   { path: "Test", component: Test },
   // 之後把 Preview 綁成子路由
   { path: "preview", component: Preview },
-  { path: "Toolbox", component: Toolbox }
+  { path: "Toolbox", component: Toolbox },
+  { path: "ButtonPage", component: ButtonPage }
+
 ];

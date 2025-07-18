@@ -16,7 +16,6 @@ export class App {
 
   imgJason:string="jason-statham.jpg"
 
-
   constructor(private router:Router){}
 
  ngOnInit() {

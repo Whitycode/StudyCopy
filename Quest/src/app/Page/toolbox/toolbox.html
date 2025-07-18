@@ -1,4 +1,5 @@
 <p>toolbox works!</p>
+<div class = "Background"><img class="imgCss" src ="{{imgQGirl}}"></div>
 
 <span>
 姓名 : {{userName}}
@@ -9,9 +10,6 @@
 </span>
 
 <h4>Input 輸入回答: {{userInput}}</h4>
-
-
-
 
 <p>問題展示區</p>
 
@@ -69,3 +67,93 @@
 
   }
 }
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+<br>
+<br>
+
+<br>
+{{QuestPage.Question01.QuestTitle}}
+<br>
+@if(QuestNum0000[0].Question01.QType == "input"){
+  @for(data of QuestPage.Question01.anser;track data;let i = $index ){
+  <input
+    type="input"
+    name = "Question01"
+    [value] = "data"
+    [(ngModel)]="data.value"
+  >
+  <br>
+  }
+}
+
+<br>
+{{QuestPage.Question02.QuestTitle}}
+<br>
+@if(QuestNum0000[0].Question02.QType == "radio"){
+  @for(data of QuestPage.Question02.anser;track data;let i = $index ){
+  <input
+    type="radio"
+    name = "Question02"
+    [value] = "data.select"
+    [(ngModel)]="test"
+
+    >
+  {{QuestPage.Question02.anser[i].value}}<br>
+  }
+}
+
+<br>
+{{QuestPage.Question03.QuestTitle}}
+<br>
+@if(QuestNum0000[0].Question03.QType == "checkbox"){
+  @for(data of QuestPage.Question03.anser;track data;let i = $index ){
+  <input
+    type="checkbox"
+    name = "Question03"
+    [value] = "data"
+    [(ngModel)]="data.select"
+  >
+  {{QuestPage.Question03.anser[i].value}}<br>
+  }
+}
+
+<br>
+<span>Test</span>
+  <input
+    type="radio"
+    name = "same01"
+    [value] = "1"
+    [(ngModel)]="test"
+  >
+  <input
+    type="radio"
+    name = "same01"
+    [value] = "2"
+    [(ngModel)]="test"
+  >
+
+
+
+
+
+<br>
+<br>
+<br>
+<span>Json資料參考:</span>
+<br>
+<span>radio不能擁有值之後重設,會重疊</span>
+<br>
+{{QuestNum0000[0].Title}} - {{QuestNum0000[0].creatorName}}
+<br>
+{{QuestNum0000[0].Question01.QuestTitle}}<br>
+{{QuestNum0000[0].Question01.QType}}
+{{QuestNum0000[0].Question01.anser[0].value}}
