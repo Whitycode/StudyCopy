@@ -1,0 +1,23 @@
+<p>toolbox works!</p>
+
+@for(howMany of choseBox;track howMany;let i = $index){
+
+  @if(choseBox[i].type == "input"){
+   <input
+    [(ngModel)] = "choseBox[i].Value"
+    placeholder = "新建輸入框"
+    >
+  <br>
+  }
+   @if(choseBox[i].type == "radio"){
+  <button>單選題</button>
+  <br>
+
+   }
+   @if(choseBox[i].type == "checkbox"){
+  <button>複選題啦</button>
+  <br>
+  }
+
+}
+

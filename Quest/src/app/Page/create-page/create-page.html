@@ -2,16 +2,6 @@
 
 
 <!-- 輸入框 -->
-
- <button (click)="addButton()">+</button>
-<div>
-  <br>
-  @for( data of buttons;track data; ){
-  <button>{{buttonName}} {{ null }}</button>
-  }
-</div>
-
-
  <button (click)="addInput()"class="addButton" >+ 新增輸入框</button>
   <br>
   @for( data of Inputs;track data; let i = $index){

@@ -1,12 +1,17 @@
 <p>button-page works!</p>
 <div class="buttonPage">
-<button (click) = "addInputButton()" >輸入框</button>
-<button (click) = "addRadioButton()">單選題</button>
-<button (click) = "addCheckboxButton()">複選題</button>
+<!-- <button (click) = "addInputButton()" >輸入框</button> -->
+<!-- <button (click) = "addRadioButton()">單選題</button> -->
+<!-- <button (click) = "addCheckboxButton()">複選題</button> -->
+<br>
+<button (click) = "addRadioPage()">單選題</button>
+<button (click) = "addInputPage()">輸入框</button>
+<button (click) = "addCheckboxPage()">複選題</button>
 </div>
 <div></div>
 
-@for(howMany of choseBox;track howMany;let i = $index){
+
+<!-- @for(howMany of choseBox;track howMany;let i = $index){
 
   @if(choseBox[i].type == "input"){
    <input
@@ -19,12 +24,82 @@
   <button>單選題</button>
   <br>
   }
-
    @if(choseBox[i].type == "checkbox"){
   <button>複選題啦</button>
   <br>
   }
+} -->
 
 
-}
+<!-- 判斷 Type 是甚麼類型  -->
+<!-- 確認完生成 按鈕本身可以觸發 push建立類型 -->
 
+<!-- 參考位置: -->
+<!-- {{choseBoxT[0].answer[0].value}} -->
+<!-- {{QuestPage[0].QuestList[0].QType}} -->
+
+<br>
+
+  @for( data of QuestPage[0].QuestList;track data; let i = $index){
+    @if(QuestPage[0].QuestList[i].QType == "input"){
+      @for( data2 of data.answer;track data2;let questIndex = $index){
+      <input type = "input" style = "width:60px"
+        placeholder="問題名稱"
+        [(ngModel)]="data.QuestTitle"
+      >
+      <br>
+        <input [(ngModel)]="data2.value" placeholder="回答欄位" >
+        <button (click)="DeleteInt(questIndex)">刪除</button>
+        <br>
+      }
+      <br>
+    }
+    @if(QuestPage[0].QuestList[i].QType == "radio"){
+      @for( data2 of data.answer;track data2;let questIndex = $index){
+       <input type = "input" style = "width:60px"
+        placeholder="問題名稱"
+        [(ngModel)]="data.QuestTitle"
+      >
+      <br>
+      <input type = "radio"
+        style ="margin:6px 8px"
+        name = "radioNum"
+
+        [(ngModel)]="data.QuestTitle"
+      >
+        <input [(ngModel)]="data2.value"style="width:96px" placeholder="回答欄位" >
+        <button>新建</button>
+        <button (click)="DeleteRadio(questIndex)">刪除</button>
+        <br>
+      }
+     <br>
+    }
+
+    @if(QuestPage[0].QuestList[i].QType  == "checkbox"){
+      @for( data2 of data.answer;track data2;let questIndex = $index){
+     <input type = "input" style = "width:60px"
+        placeholder="問題名稱"
+        [(ngModel)]="data.QuestTitle"
+      >
+      <br>
+      <input type = "checkbox"
+        placeholder="問題名稱"
+        [(ngModel)]="data.QuestTitle"
+      >
+        <input [(ngModel)]="data2.value"style="width:96px" placeholder="回答欄位" >
+        <button>新建</button>
+        <button (click)="DeleteRadio(questIndex)">刪除</button>
+        <br>
+      }
+     <br>
+    }
+  }
+
+
+
+@for(howMany of choseBox;track howMany;let i = $index){
+  @if(choseBox[i].QType == "radio"){
+  <button>單選題</button>
+  <br>
+  }
+  }
