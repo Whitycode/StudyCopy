@@ -1,0 +1,119 @@
+<p>testpage works!</p>
+<div>
+  <div class="userDiv">
+    <h4 style="margin:4px 0px">姓名:</h4>
+    <input type="text" [(ngModel)]="userName">
+
+  </div>
+  <div class="userDiv">
+    <h4 style="margin:4px 0px">電話:</h4>
+    <input type="number" [(ngModel)]="userPhone">
+  </div>
+
+  <div class="userDiv">
+    <h4 style="margin:4px 0px">郵箱:</h4>
+    <input type="text" [(ngModel)]="userEmail">
+  </div>
+</div>
+<button (click)="SeandJSON()">確認送出 Test</button>
+<h4>問卷說明：{{QusetTest}}</h4>
+
+
+<h4>{{ QuestPage[0].Title }}</h4>
+<label>ID:{{ QuestPage[0].QuestID }}</label>
+<br>
+<br>
+
+@for(data of QuestPage[0].QuestList;track data;let QList = $index){
+
+
+
+  @if(data.QType == 'input'){
+    <h4 style ="margin:0;">{{data.QuestTitle}}</h4>
+    <br>
+    <input
+    type = "text"
+    style ="height:50px"
+    [(ngModel)]="data.answer[0].value"
+    placeholder="讚！不解釋~"
+   >
+  }
+  <br>
+
+   @if(data.QType == 'radio'){
+    <h4 style ="margin:0;">{{data.QuestTitle}}</h4>
+    <br>
+    @for(data2 of data.answer;track data2;let options = $index){
+    <input
+    type = "radio"
+    [name]="'radioValue'+ QList"
+    [value]="data2.value"
+    [(ngModel)]="data.userAnswer"
+   >
+    <!-- userAnswer 是包在外部 interface判斷 radio 有沒有選取 -->
+   {{data2.value}}
+   <br>
+    }
+  }
+
+  @if(data.QType == 'checkbox'){
+    <h4 style ="margin:0;">{{data.QuestTitle}}</h4>
+    <br>
+    @for(data2 of data.answer;track data2 ;let j = $index){
+    <input
+    type = "checkbox"
+    [name] = "'checkbox'+j"
+    [(ngModel)]="data2.boolean"
+   >
+   {{data2.value}}
+    <br>
+    }
+  }
+}
+
+
+
+
+<!-- <h4>{{QuestPage[0].QuestList[1].QuestTitle}}</h4>
+<input type="radio" name="Radio1" value="R1" [(ngModel)]="RadioClick">
+{{radioOptions.answer[0].value}}
+<br>
+<input type="radio" name="Radio1" value="R2" [(ngModel)]="RadioClick">
+{{radioOptions.answer[1].value}}
+<br>
+
+<h4>{{QuestPage[0].QuestList[2].QuestTitle}}</h4>
+<input type="checkbox" [(ngModel)]="CheckDone3">
+{{checkboxOptions.answer[0].value}}
+<br>
+<input type="checkbox" [(ngModel)]="CheckDone4">
+{{checkboxOptions.answer[1].value}}
+<br> -->
+
+<br><br><br><br><br><br><br>
+<!-- <h4>{{QuestPage[0].QuestList[0].QuestTitle}}</h4>
+<input [type] = "QuestPage[0].QuestList[0].QType" class="intSize" [(ngModel)]="userInput" placeholder="讚！不解釋~">
+<button (click)="SeandJSON()">確認送出 Test</button>
+<br>
+
+<h4>{{QuestPage[0].QuestList[1].QuestTitle}}</h4>
+<input type="radio" name="Radio1" value="R1" [(ngModel)]="RadioClick">
+{{radioOptions.answer[0].value}}
+<br>
+<input type="radio" name="Radio1" value="R2" [(ngModel)]="RadioClick">
+{{radioOptions.answer[1].value}}
+<br>
+
+<h4>{{QuestPage[0].QuestList[2].QuestTitle}}</h4>
+<input type="checkbox" [(ngModel)]="CheckDone3">
+{{checkboxOptions.answer[0].value}}
+<br>
+<input type="checkbox" [(ngModel)]="CheckDone4">
+{{checkboxOptions.answer[1].value}} -->
+
+
+
+
+
+<br>
+<button routerLink="/Home" routerLinkActive="active">回到首頁</button>

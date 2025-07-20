@@ -2,3 +2,17 @@
 <h2>歡迎使用 Quset</h2>
 <div class = "showPast"></div>
 <br>
+
+<button>現行問卷列表</button>
+<br>
+<div style="display:flex;align-items: center; gap: 2px;">
+<h5>問卷名稱:</h5><input placeholder="問卷名稱">
+</div>
+<div style="display:flex;align-items: center; gap: 2px;">
+<h6 style="margin:4px">開始時間:</h6><input type ="date" [(ngModel)]="startDate" [max]="endDate" style="width:100px; height:20px">
+<h6 style="margin:4px">結束時間:</h6><input type ="date" [(ngModel)]="endDate" [min]="startDate" style="width:100px; height:20px">
+<button (click)="sendDate()"style="width:50px; height:24px;margin-left:12px"><h5 style="margin:0">查詢</h5></button>
+</div>
+<br>
+<div style="background-color:rgb(182, 165, 142); width:400px; height:200px" ></div>
+

@@ -12,7 +12,7 @@
 
 
 <h4>Input 輸入回答:</h4>
-<input class="intSize" (keyup)="inputText()" [(ngModel)]="userInput">
+<input class="intSize" [(ngModel)]="userInput">
 <button (click)="SeandJSON()">確認送出</button>
 <button (click)="ClearJSON()">清除陣列</button>
 <br>
@@ -26,8 +26,10 @@
 
 
 <input type="checkbox" [(ngModel)]="CheckDone3">勾選框三
+<input type="checkbox" [(ngModel)]="CheckDone3">勾選框三
+
 
 <br>
 
 <br>
-<button routerLink="/" routerLinkActive="active">回到首頁</button>
+<button routerLink="/Home" routerLinkActive="active">回到首頁</button>

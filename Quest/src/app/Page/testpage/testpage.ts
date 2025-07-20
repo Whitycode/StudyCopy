@@ -6,52 +6,125 @@ import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/rou
 
 
 @Component({
-  selector: 'app-test',
+  selector: 'app-testpage',
   imports: [
     FormsModule,
     RouterOutlet,
     RouterLink,
     RouterLinkActive
   ],
-  templateUrl: './test.html',
-  styleUrl: './test.scss'
+  templateUrl: './testpage.html',
+  styleUrl: './testpage.scss'
 })
-export class Test {
+export class Testpage {
+
 
   userName!: string;
   userPhone!: string;
   userEmail!: string;
 
 
-// 整理的 精簡 JSON 空包裹
-QuestPage:QuestForm[] = [
-  {
-    Title: "",
-    QuestID: "",
-    creatorName: "",
-    QuestList: [
-      {
-        QuestionNumber: "",
-        QuestTitle: "",
-        QType: "",
-        answer: [
-          { value: "", select: "N", boolean: false }
-        ]
-      }
-    ]
-  }
-]
+
+
+  // // 整理的 精簡 JSON 空包裹
+  // QuestPage: QuestForm[] = [
+  //   {
+  //     Title: "",
+  //     QuestID: "",
+  //     creatorName: "",
+  //     QuestList: [
+  //       {
+  //         QuestionNumber: "",
+  //         QuestTitle: "",
+  //         QType: "",
+  //         answer: [
+  //           { value: "", select: "N", boolean: false }
+  //         ]
+  //       }
+  //     ]
+  //   }
+  // ]
+
+
+
+  QuestPage: QuestForm[] = [
+    {
+      Title: "測試用的問卷",
+      QuestID: "QcID0003",
+      creatorName: "",
+      QuestList: [
+        {
+          QuestionNumber: "",
+          QuestTitle: "說說對本次問卷排版的想法:",
+          QType: "input",
+          answer: [
+            { value: "", select: "N", boolean: false }
+          ]
+        },
+        {
+          QuestionNumber: "",
+          QuestTitle: "你比較喜歡甚麼動物:",
+          QType: "radio",
+          answer: [
+            { value: "狗狗", select: "N", boolean: false },
+            { value: "貓貓", select: "N", boolean: false }
+          ]
+        },
+        {
+          QuestionNumber: "",
+          QuestTitle: "喜歡做的事情",
+          QType: "checkbox",
+          answer: [
+            { value: "畫圖畫到忘記時間", select: "N", boolean: false },
+            { value: "程式寫到天荒地老", select: "N", boolean: false }
+          ]
+        }
+      ]
+    }
+  ]
+
+  // radioOptions = this.QuestPage[0].QuestList[1];
+  // checkboxOptions = this.QuestPage[0].QuestList[2];
+
 
 
 
   // 輸入框事件
   userInput: string = '';
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // 選項事件
   RadioClick!: string;
   // 複選事件
   CheckDone = false;
   CheckDone3 = false;
+  CheckDone4 = false;
   // 陣列要定義好裡面內容的類型
   CheckJson: string[] = [];
 
@@ -59,19 +132,13 @@ QuestPage:QuestForm[] = [
   QusetTest = "這邊是問卷的說明欄測試";
 
   // service 建構式
-  constructor(private Teleport: Teleport ,private router:Router) { }
+  constructor(private Teleport: Teleport, private router: Router) { }
 
   inputText() {
     // console.log(this.userInput);
   }
 
-  //用戶資料傳送 service
-  TestName() {
-    console.log(this.userName);
-    this.Teleport.userName = this.userName;
-    this.Teleport.userPhone = this.userPhone;
-    this.Teleport.userEmail = this.userEmail;
-  }
+
 
   SeandJSON() {
     //用戶資料傳送 service
@@ -136,45 +203,4 @@ QuestPage:QuestForm[] = [
   //     console.log("CheckBox沒有勾選");
   //   }
   // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // ChangeSelect(){
-  //   // this.RadioClick = true;
-  //   console.log(this.RadioClick);
-  //   if(this.RadioClick){
-  //     console.log(this.RadioClick);
-  //   }
-  // }
-
-
-  ngOnInit(): void {
-    console.log(this.userInput);
-  }
 }

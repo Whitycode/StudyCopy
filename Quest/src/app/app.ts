@@ -21,8 +21,8 @@ export class App {
  ngOnInit() {
 
   // 跳轉至元件
-    // this.router.navigateByUrl('/');
-    // this.router.navigateByUrl('/Test');
+    // this.router.navigateByUrl('/Home');
+    this.router.navigateByUrl('/Testpage');
 
 
  }

@@ -1,8 +1,5 @@
 <p>button-page works!</p>
 <div class="buttonPage">
-<!-- <button (click) = "addInputButton()" >輸入框</button> -->
-<!-- <button (click) = "addRadioButton()">單選題</button> -->
-<!-- <button (click) = "addCheckboxButton()">複選題</button> -->
 <br>
 <button (click) = "addRadioPage()">單選題</button>
 <button (click) = "addInputPage()">輸入框</button>
@@ -11,24 +8,7 @@
 <div></div>
 
 
-<!-- @for(howMany of choseBox;track howMany;let i = $index){
 
-  @if(choseBox[i].type == "input"){
-   <input
-    [(ngModel)] = "choseBox[i].Value"
-    placeholder = "新建輸入框"
-    >
-  <br>
-  }
-   @if(choseBox[i].type == "radio"){
-  <button>單選題</button>
-  <br>
-  }
-   @if(choseBox[i].type == "checkbox"){
-  <button>複選題啦</button>
-  <br>
-  }
-} -->
 
 
 <!-- 判斷 Type 是甚麼類型  -->
@@ -40,55 +20,59 @@
 
 <br>
 
-  @for( data of QuestPage[0].QuestList;track data; let i = $index){
-    @if(QuestPage[0].QuestList[i].QType == "input"){
+  @for( data of QuestPage[0].QuestList;track data; let QList = $index){
+
+    @if(QuestPage[0].QuestList[QList].QType == "input"){
       @for( data2 of data.answer;track data2;let questIndex = $index){
-      <input type = "input" style = "width:60px"
-        placeholder="問題名稱"
+      <input type = "input" style = "width:80px"
+        [placeholder]="'問題名稱 '+ QList"
         [(ngModel)]="data.QuestTitle"
       >
       <br>
-        <input [(ngModel)]="data2.value" placeholder="回答欄位" >
-        <button (click)="DeleteInt(questIndex)">刪除</button>
+        <input [(ngModel)]="data2.value" style="margin-right: 6px" placeholder="回答欄位" >
+        <button (click)="DeleteQuest(QList)">刪除</button>
         <br>
       }
       <br>
     }
-    @if(QuestPage[0].QuestList[i].QType == "radio"){
-      @for( data2 of data.answer;track data2;let questIndex = $index){
-       <input type = "input" style = "width:60px"
-        placeholder="問題名稱"
-        [(ngModel)]="data.QuestTitle"
-      >
-      <br>
-      <input type = "radio"
-        style ="margin:6px 8px"
-        name = "radioNum"
 
+    @if(QuestPage[0].QuestList[QList].QType == "radio"){
+        <input type = "input" style = "width:80px ; margin-right: 6px"
+        [placeholder]="'問題名稱 '+ QList"
         [(ngModel)]="data.QuestTitle"
       >
-        <input [(ngModel)]="data2.value"style="width:96px" placeholder="回答欄位" >
-        <button>新建</button>
-        <button (click)="DeleteRadio(questIndex)">刪除</button>
+      <button (click) = "addOption(QList)">新建</button>
+      <button (click)="DeleteQuest(QList)">刪除</button>
+       <br>
+
+       @for(data2 of data.answer;track data2;let answerIndex = $index){
+        <input type = "radio"
+        [name] = "'RqValue' + QList"
+        >
+        <input [(ngModel)]="data2.value"style="width:96px; margin-right:6px" placeholder="回答欄位" >
+        <button (click)="DeleteOption(QList, answerIndex)">-</button>
         <br>
       }
      <br>
     }
 
-    @if(QuestPage[0].QuestList[i].QType  == "checkbox"){
-      @for( data2 of data.answer;track data2;let questIndex = $index){
-     <input type = "input" style = "width:60px"
-        placeholder="問題名稱"
+    @if(QuestPage[0].QuestList[QList].QType  == "checkbox"){
+      <input type = "input" style = "width:80px ; margin-right: 6px"
+        [placeholder]="'問題名稱 '+ QList"
         [(ngModel)]="data.QuestTitle"
       >
+      <button (click)="addOption(QList)">新建</button>
+      <button (click)="DeleteQuest(QList)">刪除</button>
       <br>
+      @for( data2 of data.answer;track data2;let answerIndex = $index){
       <input type = "checkbox"
         placeholder="問題名稱"
-        [(ngModel)]="data.QuestTitle"
+        [name] = "'CqList'+ QList"
+        [value] = "data2.value"
+        [(ngModel)]="data2.boolean"
       >
-        <input [(ngModel)]="data2.value"style="width:96px" placeholder="回答欄位" >
-        <button>新建</button>
-        <button (click)="DeleteRadio(questIndex)">刪除</button>
+        <input [(ngModel)]="data2.value"style="width:96px; margin-right:6px " placeholder="回答欄位" >
+        <button (click)="DeleteOption(QList, answerIndex)">-</button>
         <br>
       }
      <br>
@@ -97,9 +81,4 @@
 
 
 
-@for(howMany of choseBox;track howMany;let i = $index){
-  @if(choseBox[i].QType == "radio"){
-  <button>單選題</button>
-  <br>
-  }
-  }
+
