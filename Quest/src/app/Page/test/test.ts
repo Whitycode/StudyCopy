@@ -28,6 +28,7 @@ QuestPage:QuestForm[] = [
   {
     Title: "",
     QuestID: "",
+    Directions:"",
     creatorName: "",
     QuestList: [
       {

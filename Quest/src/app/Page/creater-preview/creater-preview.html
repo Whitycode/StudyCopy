@@ -1,22 +1,12 @@
-<p>preview works!</p>
+<p>creater-preview works!</p>
 
-<span>
-姓名 : {{userName}}
+
+  {{ QuestPage[0].QuestList[0].QType }}
+
 <br>
-手機 : {{userPhone}}
 <br>
-郵箱 : {{userEmail}}
-</span>
-
-
-
-<h4>Input 輸入回答: {{userInput}}</h4>
-
-
-@if (QuestPage[0].QuestList.length > 0){
-  {{ QuestPage[0].Title }}
-}
-
+<!-- 使用者資料 -->
+<!-- 問卷開頭ID還沒建檔 -->
 <h4>{{QuestPage[0].Title }}</h4>
 <label>ID:{{ QuestPage[0].QuestID }}</label>
 <h4>問卷說明：{{QuestPage[0].Directions}}</h4>
@@ -68,8 +58,3 @@
     }
   }
 }
-
-
-
-
-

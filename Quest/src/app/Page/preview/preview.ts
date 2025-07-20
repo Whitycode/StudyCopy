@@ -1,6 +1,8 @@
+import { Answer, Question, QuestForm } from './../../Interface/interface/interface';
 import { FormsModule } from '@angular/forms';
 import { Teleport } from './../../@service/teleport';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-preview',
@@ -17,107 +19,35 @@ export class Preview {
 
   userInput!: string;
 
+  // 傳送進來的 JSON公用變數
+  // QuestPage 先定義成了 Interface的陣列格式
+  // QuestJsonData 變成接收service的 JSON黨
+  // 後面再推進去陣列 讓 HTML抓自己想要的第幾筆資料
+  QuestPage: QuestForm[]=[];
+  QuestJsonData!:QuestForm;
 
+  constructor(private Teleport: Teleport
 
-  JsonData2 = {
-    Title: "標題名稱",
-    QusetTitle: "你喜歡甚麼類型",
-    intputQType: "Checkbox",
-    optionName: ["大姊姊", "大姊姊*2", "還是大姊姊"]
-  }
-
-  RadioQuestions: {
-    name: string;
-    option: any[];
-    value: string;
-    boolean: false;
-  }[] = [
-      {
-        name: '',
-        option: [],
-        value: '',
-        boolean: false
-      }
-    ];
-
-    JsonData = {
-    Title: "標題名稱",
-    QusetTitle: "5 + 5 =",
-    intputQType: "Radio",
-    optionName: [6, 5, 3, 10]
-  }
-
-  CheckQuestions: {
-    name: string;
-    option: any[];
-    value: string;
-    selected: boolean[];
-  }[] = [
-      {
-        name: '',
-        option: [],
-        value: '',
-        selected: [false,false,false]
-      }
-    ];
-
-
-    JsonDataI = {
-    Title: "標題名稱",
-    QusetTitle: "你說啥",
-    intputQType: "input",
-    optionName: [6, 5, 3, 10]
-  }
-
-
-  InputQuestions: {
-    name: string;
-    option: string;
-    value: string;
-    boolean: false;
-  }[] = [
-      {
-        name: '',
-        option: "男到，這是你的回答?",
-        value: '',
-        boolean: false
-      }
-    ];
+  ) { }
 
 
 
-  constructor(private Teleport: Teleport) { }
-
-
-
-
-
-  userNamex: string = '';
-  age: number = 18;
-  agree: boolean = false;
-  tags: string[] = ['Angular', 'TypeScript'];
-  formData = {
-    email: '',
-    password: ''
-  };
-
-
-
-  checkbutton() {
-    // [(ngModel)] 不需要替換 就會傳值進來了
-    console.log(this.userNamex);
-  }
 
 
   ngOnInit(): void {
+    // 傳送 Serivce資料進來
     this.userName = this.Teleport.userName;
     this.userPhone = this.Teleport.userPhone;
     this.userEmail = this.Teleport.userEmail;
 
     this.userInput = this.Teleport.userInput;
 
-
-
+    // QuestJsonData 抓 Serivec 的 JSON資料
+    // QuestPage 推進陣列中方便整理 想要第幾筆資料
+    this.QuestJsonData = this.Teleport.publicJSON;
+    this.QuestPage.push(this.QuestJsonData);
+    console.log("QuestPage");
+    console.log(this.QuestPage);
 
   }
 

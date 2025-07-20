@@ -4,13 +4,24 @@
 <button (click) = "addRadioPage()">單選題</button>
 <button (click) = "addInputPage()">輸入框</button>
 <button (click) = "addCheckboxPage()">複選題</button>
+<br>
+<button (click)="createrPreview()">確認建立</button>
+<button  routerLink="/Home" routerLinkActive="active">測試跳轉頁面</button>
+
 </div>
 <div></div>
 
+<!-- 固定樣式 -->
+姓名:<input><br>
+電話:<input><br>
+郵箱:<input><br>
 
-
-
-
+<h4 style = "margin:6px 0px;">標題:</h4>
+<input>
+<h4 style = "margin:6px 0px;">問卷說明:</h4>
+<input>
+<br>
+<br>
 <!-- 判斷 Type 是甚麼類型  -->
 <!-- 確認完生成 按鈕本身可以觸發 push建立類型 -->
 
@@ -19,6 +30,10 @@
 <!-- {{QuestPage[0].QuestList[0].QType}} -->
 
 <br>
+
+@if (QuestPage.length > 0) {
+
+
 
   @for( data of QuestPage[0].QuestList;track data; let QList = $index){
 
@@ -81,4 +96,4 @@
 
 
 
-
+}

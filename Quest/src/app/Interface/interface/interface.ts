@@ -19,6 +19,7 @@ export interface Question {
 export interface QuestForm {
   Title: string;
   QuestID: string;
+  Directions:string;
   creatorName: string;
   QuestList: Question[];  // 用到上面的 Question 型別
 }

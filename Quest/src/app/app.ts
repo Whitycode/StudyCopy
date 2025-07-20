@@ -14,18 +14,22 @@ import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/rou
 export class App {
   protected title = 'Quest';
 
-  imgJason:string="jason-statham.jpg"
+  imgJason: string = "jason-statham.jpg"
 
-  constructor(private router:Router){}
+  constructor(private router: Router) { }
 
- ngOnInit() {
+  ngOnInit() {
 
-  // 跳轉至元件
+    // 跳轉至元件
     // this.router.navigateByUrl('/Home');
-    this.router.navigateByUrl('/Testpage');
+    this.router.navigateByUrl('/ButtonPage');
+    // this.router.navigateByUrl('/Testpage');
+    // this.router.navigateByUrl('/preview');
 
 
- }
+
+
+  }
 
 
 

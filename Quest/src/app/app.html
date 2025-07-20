@@ -1,11 +1,19 @@
 <div class = "Background"><img class="Img" src ="{{imgJason}}"></div>
 <div>
+  <button routerLink ="/Home" routerLinkActive="active">回到首頁</button>
+  <button routerLink ="/ButtonPage" routerLinkActive="active">問卷設計</button>
+  <br>
+  <button routerLink ="/Testpage" routerLinkActive="active">新測試頁</button>
   <button routerLink ="/preview" routerLinkActive="active">展示頁面</button>
-  <button routerLink ="/ButtonPage" routerLinkActive="active">按鈕設計</button>
+  <br>
+  <button routerLink ="/createrPreview" routerLinkActive="active">創建者展示頁面</button>
+
 
 <br>
-  <button routerLink ="../" routerLinkActive="active">回上層路由</button>
-  <button routerLink ="/Toolbox" routerLinkActive="active">工具箱</button>
+  <button routerLink ="../" routerLinkActive="active">回到根目錄</button>
+
+
+
 
 
   <router-outlet></router-outlet>
@@ -16,5 +24,6 @@
 <button routerLink ="/createPage" routerLinkActive="active">歷史紀錄</button>
 <br>
 <button routerLink ="/Test" routerLinkActive="active">測試頁面</button>
-<button routerLink ="/Home" routerLinkActive="active">回到頁面</button>
 
+<br>
+ <button routerLink ="/Toolbox" routerLinkActive="active">工具箱</button>
