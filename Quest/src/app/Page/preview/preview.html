@@ -14,12 +14,12 @@
 
 
 @if (QuestPage[0].QuestList.length > 0){
-  {{ QuestPage[0].Title }}
+  {{ QuestPage[0].CreatorData[0].Title }}
 }
 
-<h4>{{QuestPage[0].Title }}</h4>
-<label>ID:{{ QuestPage[0].QuestID }}</label>
-<h4>問卷說明：{{QuestPage[0].Directions}}</h4>
+<h4>{{QuestPage[0].CreatorData[0].Title }}</h4>
+<label>ID:{{ QuestPage[0].CreatorData[0].QuestID }}</label>
+<h4>問卷說明：{{QuestPage[0].CreatorData[0].Directions}}</h4>
 <br>
 <br>
 

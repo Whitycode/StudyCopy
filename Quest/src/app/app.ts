@@ -15,6 +15,7 @@ export class App {
   protected title = 'Quest';
 
   imgJason: string = "jason-statham.jpg"
+  imgJSON: string = "JsonPage2.png"
 
   constructor(private router: Router) { }
 
@@ -25,6 +26,10 @@ export class App {
     this.router.navigateByUrl('/ButtonPage');
     // this.router.navigateByUrl('/Testpage');
     // this.router.navigateByUrl('/preview');
+    // this.router.navigateByUrl('/createrPreview');
+    // this.router.navigateByUrl('/Test');
+    // this.router.navigateByUrl('/QuestPage');
+
 
 
 

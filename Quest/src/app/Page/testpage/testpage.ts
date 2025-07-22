@@ -53,10 +53,18 @@ export class Testpage {
   // 先用這個 JSON包裹 寫全部頁面展示資料
   QuestPage: QuestForm[] = [
     {
-      Title: "測試用的問卷",
-      QuestID: "QcID0003",
-      Directions: "這邊是問卷的說明欄測試",
-      creatorName: "",
+      CreatorData: [
+        {
+          Title: "測試用的問卷",
+          QuestID: "QcID0003",
+          Directions: "這邊是問卷的說明欄測試",
+          CreatorID: "創建者01",
+          StartTime: "2025-07-10",
+          EndTime: "2025-08-06",
+        }
+      ],
+
+      HelperData: [],
       QuestList: [
         {
           QuestionNumber: "",

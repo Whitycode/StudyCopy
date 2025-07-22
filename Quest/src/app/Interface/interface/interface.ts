@@ -8,28 +8,60 @@ export interface Answer {
   boolean: boolean;
 }
 
+
+// 因為 radio是需要抓字串，現在是額外多了一個userAnswer給它用
+// 之後要再整理 JSON格式
 export interface Question {
   QuestionNumber: string;
   QuestTitle: string;
   QType: string;
   answer: Answer[];  // 用到上面的 Answer 型別
-  userAnswer?: string;
+  userAnswer?: string; // userAnswer 抓 radio是否勾選; 有勾選會傳 value的字串
+}
+
+export interface Creator {
+  QuestID: string;
+  Title: string;
+  Directions: string;
+  CreatorID: string;
+  StartTime: string;
+  EndTime: string;
+}
+
+export interface Helper {
+  HelperName: string;
+  HelperPhone: string;
+  HelperEmail: string;
 }
 
 export interface QuestForm {
-  Title: string;
-  QuestID: string;
-  Directions:string;
-  creatorName: string;
+  CreatorData: Creator[];
+  HelperData: Helper[];
   QuestList: Question[];  // 用到上面的 Question 型別
 }
 
-//  整理的 精簡 JSON 空包裹
-// QuestPage:QuestForm[] = [
+
+
+// 整理的 精簡 JSON 空包裹
+// QuestPage: QuestForm[] = [
 //   {
-//     Title: "",
-//     QuestID: "QcID0001",
-//     creatorName: "測試員01",
+//     CreatorData: [
+//       {
+//         QuestID: "",
+//         Title: "",
+//         Directions: "",
+//         CreatorID: "",
+//         StartTime: "",
+//         EndTime: "",
+//       }
+//     ],
+//     HelperData: [
+//       {
+//         HelperName: "",
+//         HelperPhone: "",
+//         HelperEmail: "",
+//       }
+//     ],
 //     QuestList: [
 //       {
 //         QuestionNumber: "QNum0",

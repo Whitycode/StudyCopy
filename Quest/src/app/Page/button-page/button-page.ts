@@ -22,6 +22,7 @@ import { Teleport } from './../../@service/teleport';
 
 export class ButtonPage {
 
+  ImgGirl = "QuestGirl2.png"
 
   // 設定一個全總數 不同按鈕個別設定計算後統整
   TotalNumber = 0;
@@ -30,21 +31,33 @@ export class ButtonPage {
   RadioNumber = 0;
   CheckboxNumber = 0;
 
-
+  // 創建者可以變更 姓名等 欄位
+  inputText01 = "";
+  inputText02 = "";
+  inputText03 = "";
 
 
   // 全域位置先寫JSON樣式的話 他會先讀取內容跑一次迴圈
 
 
 
-
   // JSON 精簡 空包裹
   QuestPage: QuestForm[] = [
     {
-      Title: "",
-      QuestID: "",
-      Directions: "",
-      creatorName: "",
+      CreatorData: [
+        {
+          QuestID: "",
+          Title: "",
+          Directions: "",
+          CreatorID: "",
+          StartTime: "",
+          EndTime: ""
+        }
+
+      ],
+      HelperData: [ // ✅ 這段一定要初始化
+        { HelperName: "", HelperPhone: "", HelperEmail: "" }
+      ],
       QuestList: []
     }
   ]
@@ -238,8 +251,16 @@ export class ButtonPage {
 
   createrPreview() {
     console.log("暫存打包", this.QuestPage);
+
+
+    this.Teleport.inputText01 = this.inputText01;
+    this.Teleport.inputText02 = this.inputText02;
+    this.Teleport.inputText03 = this.inputText03;
+
+
+
     this.Teleport.createrJSON = this.QuestPage;
-    console.log(this.Teleport.createrJSON );
+    console.log(this.Teleport.createrJSON);
   }
 
 
@@ -258,11 +279,24 @@ export class ButtonPage {
 
     this.TotalNumber = this.Teleport.TotalNumber;
 
+    this.inputText01 = this.Teleport.inputText01;
+    this.inputText02 = this.Teleport.inputText02;
+    this.inputText03 = this.Teleport.inputText03;
+
+
+
+
+
     // 先檢查 service 裡的資料是否有值
     if (this.Teleport.createrJSON && this.Teleport.createrJSON.length > 0) {
       this.QuestPage = this.Teleport.createrJSON;
       console.log("初始JSON", this.QuestPage);
     }
+
+    // 今日新增
+    // if (this.QuestPage[0].HelperData.length == 0) {
+    //   this.QuestPage[0].HelperData.push({ HelperName: 'x', HelperPhone: "", HelperEmail: "" });
+    // }
 
 
 

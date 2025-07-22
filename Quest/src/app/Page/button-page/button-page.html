@@ -1,25 +1,45 @@
 <p>button-page works!</p>
+
+<div class= "DivBlock">
+  <img class="Img" src ="{{ImgGirl}}">
+</div>
+
 <div class="buttonPage">
 <br>
 <button (click) = "addRadioPage()">單選題</button>
 <button (click) = "addInputPage()">輸入框</button>
 <button (click) = "addCheckboxPage()">複選題</button>
 <br>
-<button (click)="createrPreview()">確認建立</button>
-<button  routerLink="/Home" routerLinkActive="active">測試跳轉頁面</button>
+<button (click)="createrPreview()">暫存問卷</button>
+<button
+  (click)="createrPreview()"
+  routerLink="/createrPreview"
+  routerLinkActive="active"
+  > 顯示問卷預覽
+</button>
+<!-- <button  routerLink="/Home" routerLinkActive="active">測試跳轉頁面</button> -->
 
 </div>
 <div></div>
 
-<!-- 固定樣式 -->
-姓名:<input><br>
-電話:<input><br>
-郵箱:<input><br>
 
-<h4 style = "margin:6px 0px;">標題:</h4>
-<input>
+<!-- 固定樣式 -->
+<input class="inputSizeS" placeholder = "姓名:" [(ngModel)]="inputText01">
+<input [(ngModel)]="QuestPage[0].HelperData[0].HelperName"><br>
+<input class="inputSizeS" placeholder = "電話:" [(ngModel)]="inputText02">
+<input [(ngModel)]="QuestPage[0].HelperData[0].HelperPhone"><br>
+<input class="inputSizeS" placeholder = "郵箱:" [(ngModel)]="inputText03">
+<input [(ngModel)]="QuestPage[0].HelperData[0].HelperEmail"><br>
+
+
+ <h4 style = "margin:6px 0px;">標題:</h4>
+  <input
+  [(ngModel)]="QuestPage[0].CreatorData[0].Title"
+  >
 <h4 style = "margin:6px 0px;">問卷說明:</h4>
-<input>
+ <input
+  [(ngModel)]="QuestPage[0].CreatorData[0].Directions"
+  >
 <br>
 <br>
 <!-- 判斷 Type 是甚麼類型  -->
@@ -34,9 +54,9 @@
 @if (QuestPage.length > 0) {
 
 
-
   @for( data of QuestPage[0].QuestList;track data; let QList = $index){
 
+    <!-- {{data.QType}} -->
     @if(QuestPage[0].QuestList[QList].QType == "input"){
       @for( data2 of data.answer;track data2;let questIndex = $index){
       <input type = "input" style = "width:80px"

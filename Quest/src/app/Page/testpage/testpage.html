@@ -16,11 +16,11 @@
   </div>
 </div>
 <button (click)="SeandJSON()">確認送出 Test</button>
-<h4>問卷說明：{{QuestPage[0].Directions}}</h4>
+<h4>問卷說明：{{QuestPage[0].CreatorData[0].Directions}}</h4>
 
 
-<h4>{{ QuestPage[0].Title }}</h4>
-<label>ID:{{ QuestPage[0].QuestID }}</label>
+<h4>{{ QuestPage[0].CreatorData[0].Title }}</h4>
+<label>ID:{{ QuestPage[0].CreatorData[0].QuestID }}</label>
 <br>
 <br>
 

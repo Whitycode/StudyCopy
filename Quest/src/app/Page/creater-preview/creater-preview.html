@@ -1,17 +1,54 @@
 <p>creater-preview works!</p>
 
+<div class= "DivBlock">
+  <img class="Img" src ="{{ImgGirl}}">
+</div>
 
-  {{ QuestPage[0].QuestList[0].QType }}
+<button class="buttonPage" (click)="DataSend()">確認上傳</button>
 
-<br>
-<br>
+
 <!-- 使用者資料 -->
+<div style="display: flex;">
+{{inputText01}}
+<input
+  style ="width:80px; margin-left:10px;"
+  [(ngModel)]="QuestPage[0].HelperData[0].HelperName"
+  [placeholder]="QuestPage[0].HelperData[0].HelperName"
+>
+</div>
+<br>
+<div style="display: flex;">
+{{inputText02}}
+<input
+  style ="width:80px; margin-left:10px;"
+  [(ngModel)]="QuestPage[0].HelperData[0].HelperPhone"
+  [placeholder]="QuestPage[0].HelperData[0].HelperPhone"
+>
+</div>
+<br>
+<div style="display: flex;">
+{{inputText03}}
+<input
+  style ="width:80px; margin-left:10px;"
+  [(ngModel)]="QuestPage[0].HelperData[0].HelperEmail"
+  [placeholder]="QuestPage[0].HelperData[0].HelperEmail"
+>
+</div>
+<br>
+
+
+<!-- {{QuestPage[0].HelperData[0].HelperName}}
+{{QuestPage[0].HelperData[0].HelperPhone}}
+{{QuestPage[0].HelperData[0].HelperEmail}} -->
+
+
 <!-- 問卷開頭ID還沒建檔 -->
-<h4>{{QuestPage[0].Title }}</h4>
-<label>ID:{{ QuestPage[0].QuestID }}</label>
-<h4>問卷說明：{{QuestPage[0].Directions}}</h4>
+<label>ID:{{ QuestPage[0].CreatorData[0].QuestID }}</label>
+<h4>標題:{{QuestPage[0].CreatorData[0].Title}}</h4>
+
+<h4>問卷說明：{{QuestPage[0].CreatorData[0].Directions}}</h4>
 <br>
-<br>
+
 
 @for(data of QuestPage[0].QuestList;track data;let QList = $index){
 
@@ -24,7 +61,7 @@
     type = "text"
     style ="height:50px"
     [(ngModel)]="data.answer[0].value"
-    placeholder="讚！不解釋~"
+    [placeholder]="data.answer[0].value"
    >
   }
   <br>

@@ -11,7 +11,9 @@ import { DatePickerService } from '../../@service/date-picker-service';
 })
 export class Home {
 
-  setDate = new Date("2025-07-18") ;
+  imgCat = "cat.jpg"
+
+  setDate = new Date("2025-07-18");
 
   startDate: string = "";
   endDate: string = "";

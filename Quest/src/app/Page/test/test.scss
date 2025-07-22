@@ -1,6 +1,46 @@
-.intSize{
-width:260px;
-height:100px;
+.tableDiv {
+  background-color: aliceblue;
+  width: 440px;
+  height: 180px;
+  opacity:1;
+}
+.tableDiv2 {
+  background-color: rgb(178, 213, 199);
+  width: 440px;
+  height: 36px;
+  opacity:1;
+}
+
+.tableCss {
+  border: 2px solid black;
+  border-collapse: collapse; /* 讓儲存格邊框貼齊，等於 cellspacing="0" */
+}
+
+.tableCss th,
+.tableCss td {
+  border: 2px solid black;
+  padding: 4px 6px;
+  text-align: left;
 }
 
 
+
+// 新增樣式
+.custom-table {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 100%;
+}
+.custom-table th,
+.custom-table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+button {
+  margin: 0 2px;
+}
+
+.active{
+color:aqua
+}

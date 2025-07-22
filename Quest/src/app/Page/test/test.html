@@ -1,35 +1,124 @@
 <p>test works!</p>
+<div class="tableDiv">
+  <!-- <table border="1" cellpadding="4" cellspacing="2"> -->
 
-<h4>姓名: <input type="text" [(ngModel)]="userName"></h4>
-<h4>電話: <input type="number" [(ngModel)]="userPhone"></h4>
-<h4>郵箱: <input type="text" [(ngModel)]="userEmail"></h4>
+    <table class="tableCss" >
 
-<button (click)="TestName()">資料輸入測試</button>
+    <thead>
+      <tr>
+        @for(Name of  questionTitle;track Name){
+          <th>
+            <h6 style="margin:0">{{Name.QT}}</h6>
+          </th>
+        }
+      </tr>
+    </thead>
 
-<h4>問卷說明：{{QusetTest}}</h4>
+    <!-- 這裡用 pageData 不是 QuestData 是因為； -->
+    <!-- 我先要把 QuestPage 的資料整理成列表 -->
+    <!-- 所以先把每頁要設定顯示幾筆的部分做出來 -->
+    <tbody>
+    @for( QListPage of pagedData;track QListPage ){
 
-
-
-
-<h4>Input 輸入回答:</h4>
-<input class="intSize" [(ngModel)]="userInput">
-<button (click)="SeandJSON()">確認送出</button>
-<button (click)="ClearJSON()">清除陣列</button>
-<br>
-
-<h4>Radio 選項問題:</h4>
-<input type="radio" name="Radio1" value="R1" [(ngModel)]="RadioClick">選項一<br>
-<input type="radio" name="Radio1" value="R2" [(ngModel)]="RadioClick">選項二<br>
-
-
-<h4>Checkbox 複選問題:</h4>
-
-
-<input type="checkbox" [(ngModel)]="CheckDone3">勾選框三
-<input type="checkbox" [(ngModel)]="CheckDone3">勾選框三
+      <!-- 這裡抓 CreatorData的部分 就不影響 因為這裡是獨立包裝的 JSON -->
+      @for( CreatorData of QListPage.CreatorData;track CreatorData) {
 
 
-<br>
+       <tr>
+        <td>
+            <h6 style="margin:0">
+              #{{ (CreatorData.QuestID).slice(5 ,9) }}
+            </h6>
+        </td>
+         <td>
+            <h6 style="margin:0">{{ CreatorData.Title }}</h6>
+        </td>
+         <td>
+            <h6 style="margin:0">狀態思考</h6>
+        </td>
 
-<br>
-<button routerLink="/Home" routerLinkActive="active">回到首頁</button>
+         <td>
+            <h6 style="margin:0">{{ CreatorData.StartTime}}</h6>
+        </td>
+        <td>
+            <h6 style="margin:0">{{ CreatorData.EndTime }}</h6>
+        </td>
+        <td>
+          <!-- 所以我這裡還是得用 QcID 回去抓是第幾筆的 QuestPage資料 -->
+            <h6
+            style="margin:0 ; color:rgb(25, 119, 88)"
+            [routerLink]="['/QuestPage', CreatorData.QuestID]"
+            routerLinkActive="active"
+            >
+            {{(CreatorData.QuestID).slice(5 ,9)}}
+            連結
+            </h6>
+        </td>
+       </tr>
+
+      }
+    }
+    </tbody>
+  </table>
+</div>
+
+<!-- 分頁按鈕 -->
+<div class="tableDiv2">
+  <!-- <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">上一頁</button> -->
+
+  <button (click)="changePage(currentPage - 1)">上一頁</button>
+
+  <!-- @for (page of pageRange(); track page) {
+    <button (click)="changePage(page)" [disabled]="page === currentPage">
+      {{ page }}
+    </button>
+  } -->
+
+  <label> page {{pageNow}} </label>
+  <button (click)="changePage(currentPage + 1)">下一頁</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="background-color: rgb(191, 220, 210); width: 440px;height: 50px;">
+  <div style="display: flex;">
+
+  <input
+  (keyup)="searchQuest($event)"
+  [(ngModel)]="searchData"
+  style="margin-right:20px "
+  placeholder="名稱"
+  >
+  <h6 style="margin:4px; display:flex;">表單狀態:</h6>
+    <select>
+      <option value="" disabled selected hidden></option>
+      <option value="進行中">進行中</option>
+      <option value="尚未開始">尚未開始</option>
+      <option value="已結束">已結束</option>
+    </select>
+  </div>
+
+<div style="display:flex;align-items: center; gap: 2px;">
+<h6 style="margin:4px">開始時間:</h6><input type ="date" [(ngModel)]="startDate" [max]="endDate" style="width:100px; height:20px">
+<h6 style="margin:4px">結束時間:</h6><input type ="date" [(ngModel)]="endDate" [min]="startDate" style="width:100px; height:20px">
+
+</div>
+<button (click)="sendDate()"style="width:50px; height:24px;margin-left:12px"><h5 style="margin:0">查詢</h5></button>
+
+
+
+

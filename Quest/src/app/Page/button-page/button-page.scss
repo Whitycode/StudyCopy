@@ -4,3 +4,24 @@ right:6%;
 top:8%;
 z-index:3;
 }
+
+.DivBlock {
+  // background-color: rgb(69, 170, 201);
+  position: fixed;
+  right: 25%;
+  top: 45%;
+  width: 40%;
+  height: 50vh;
+  z-index: -1;
+}
+
+
+.Img {
+  height: 100%;
+  opacity:1;
+}
+
+.inputSizeS{
+  width:30px;
+  margin-right:6px;
+}

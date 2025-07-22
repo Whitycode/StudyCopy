@@ -1,0 +1,116 @@
+<p>quest-page works!</p>
+
+<div class="buttonPage">
+
+<button >暫存問卷</button>
+<br>
+<button
+
+  routerLink="/createrPreview"
+  routerLinkActive="active"
+  > 顯示問卷預覽
+</button>
+</div>
+@for(data of QuestPage;track data;let i = $index){
+  <!-- 設定 i 抓 QuestPage 是 第幾筆 -->
+  @if(data.CreatorData[0].QuestID === QcIDNow){
+
+    <!-- 使用者資料 -->
+    <div style="display: flex;">
+    {{inputText01}}<br>
+    <input
+    style ="width:80px"
+    [(ngModel)]="QuestPage[i].HelperData[0].HelperName"
+    [placeholder]="QuestPage[i].HelperData[0].HelperName"
+    >
+    </div>
+    <br>
+    <div style="display: flex;">
+    {{inputText02}}<br>
+    <input
+    style ="width:80px"
+    [(ngModel)]="QuestPage[i].HelperData[0].HelperPhone"
+    [placeholder]="QuestPage[i].HelperData[0].HelperPhone"
+    >
+    </div>
+    <br>
+    <div style="display: flex;">
+    {{inputText03}}<br>
+    <input
+    style ="width:80px"
+    [(ngModel)]="QuestPage[i].HelperData[0].HelperEmail"
+    [placeholder]="QuestPage[i].HelperData[0].HelperEmail"
+    >
+    </div>
+
+
+    <!-- 問卷 標題內容 -->
+    <h4>標題:{{QuestPage[i].CreatorData[0].Title}}</h4>
+    <h4>問卷說明：{{QuestPage[i].CreatorData[0].Directions}}</h4>
+    <br>
+    <label>ID : {{ (QuestPage[i].CreatorData[0].QuestID).slice(5,9) }}</label>
+    <br>
+    <label>第 {{i}} 筆資料</label>
+
+    @for(data2 of data.QuestList;track data2;let QList = $index){
+
+      @if(data2.QType == 'input'){
+        <h4 style ="margin:0;">{{data2.QuestTitle}}</h4>
+        <br>
+        <input
+        type = "text"
+        style ="height:50px"
+        [(ngModel)]="data2.answer[0].value"
+        [placeholder]="data2.answer[0].value"
+        >
+      }
+      <br>
+
+      @if(data2.QType == 'radio'){
+        <h4 style ="margin:0;">{{data2.QuestTitle}}</h4>
+        <br>
+        @for(data3 of data2.answer;track data3;let options = $index){
+          <input
+          type = "radio"
+          [name]="'radioValue'+ QList"
+          [value]="data3.value"
+          [(ngModel)]="data2.userAnswer"
+          >
+          {{data3.value}}
+          <br>
+        }
+      }
+
+      @if(data2.QType == 'checkbox'){
+        <h4 style ="margin:0;">{{data2.QuestTitle}}</h4>
+        <br>
+        @for(data3 of data2.answer;track data3 ;let j = $index){
+          <input
+          type = "checkbox"
+          [name] = "'checkbox'+j"
+          [(ngModel)]="data3.boolean"
+          >
+          {{data3.value}}
+          <br>
+        }
+      }
+
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

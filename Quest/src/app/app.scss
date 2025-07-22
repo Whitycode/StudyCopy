@@ -8,6 +8,9 @@
   width:100vw;
   height:100vh;
   z-index:-1 ;
+  // 畫面滾動設置 垂直自動 橫向綁定
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .showPast{
@@ -19,4 +22,10 @@ background-color:rgb(69, 170, 201);
 
 .Img{
 opacity:0.15;
+}
+
+.ImgJson{
+  height: 600px;
+  width:auto;
+  opacity:0.2;
 }
