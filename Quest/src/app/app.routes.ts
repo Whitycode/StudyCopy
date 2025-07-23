@@ -8,6 +8,7 @@ import { ButtonPage } from './Page/button-page/button-page';
 import { Testpage } from './Page/testpage/testpage';
 import { CreaterPreview } from './Page/creater-preview/creater-preview';
 import { QuestPage } from './Page/quest-page/quest-page';
+import { QuestPreview } from './Page/quest-preview/quest-preview';
 
 export const routes: Routes = [
   // 這是綁定首頁
@@ -21,6 +22,7 @@ export const routes: Routes = [
   { path: "ButtonPage", component: ButtonPage },
   { path: "Testpage", component: Testpage },
   { path: "createrPreview", component:CreaterPreview},
+  { path: "questPreview", component:QuestPreview},
 
   // 答題頁面
   { path: "QuestPage",component:QuestPage},

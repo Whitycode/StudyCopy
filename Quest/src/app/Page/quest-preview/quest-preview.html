@@ -1,0 +1,89 @@
+<p>quest-preview works!</p>
+
+<img class="ImgSize" src ={{ImgPirate}}>
+
+<!-- 使用者資料 -->
+<div style="display: flex;">
+{{inputText01}}
+<input
+  style ="width:80px; margin-left:10px;"
+  [(ngModel)]="QuestPage[0].HelperData[0].HelperName"
+  [placeholder]="QuestPage[0].HelperData[0].HelperName"
+>
+</div>
+<br>
+<div style="display: flex;">
+{{inputText02}}
+<input
+  style ="width:80px; margin-left:10px;"
+  [(ngModel)]="QuestPage[0].HelperData[0].HelperPhone"
+  [placeholder]="QuestPage[0].HelperData[0].HelperPhone"
+>
+</div>
+<br>
+<div style="display: flex;">
+{{inputText03}}
+<input
+  style ="width:80px; margin-left:10px;"
+  [(ngModel)]="QuestPage[0].HelperData[0].HelperEmail"
+  [placeholder]="QuestPage[0].HelperData[0].HelperEmail"
+>
+</div>
+<br>
+
+
+
+
+<!-- 問卷開頭ID還沒建檔 -->
+<label>ID:{{ QuestPage[0].CreatorData[0].QuestID }}</label>
+<h4>標題:{{QuestPage[0].CreatorData[0].Title}}</h4>
+
+<h4>問卷說明：{{QuestPage[0].CreatorData[0].Directions}}</h4>
+<br>
+
+
+@for(data of QuestPage[0].QuestList;track data;let QList = $index){
+
+
+
+  @if(data.QType == 'input'){
+    <h4 style ="margin:0;">{{data.QuestTitle}}</h4>
+    <br>
+    <input
+    type = "text"
+    style ="height:50px"
+    [(ngModel)]="data.answer[0].value"
+    [placeholder]="data.answer[0].value"
+   >
+  }
+  <br>
+
+   @if(data.QType == 'radio'){
+    <h4 style ="margin:0;">{{data.QuestTitle}}</h4>
+    <br>
+    @for(data2 of data.answer;track data2;let options = $index){
+    <input
+    type = "radio"
+    [name]="'radioValue'+ QList"
+    [value]="data2.value"
+    [(ngModel)]="data.userAnswer"
+   >
+   {{data2.value}}
+   <br>
+    }
+  }
+
+  @if(data.QType == 'checkbox'){
+    <h4 style ="margin:0;">{{data.QuestTitle}}</h4>
+    <br>
+    @for(data2 of data.answer;track data2 ;let j = $index){
+    <input
+    type = "checkbox"
+    [name] = "'checkbox'+j"
+    [(ngModel)]="data2.boolean"
+   >
+   {{data2.value}}
+    <br>
+    }
+  }
+}

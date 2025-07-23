@@ -23,7 +23,7 @@ export class App {
 
     // 跳轉至元件
     // this.router.navigateByUrl('/Home');
-    this.router.navigateByUrl('/ButtonPage');
+    // this.router.navigateByUrl('/ButtonPage');
     // this.router.navigateByUrl('/Testpage');
     // this.router.navigateByUrl('/preview');
     // this.router.navigateByUrl('/createrPreview');

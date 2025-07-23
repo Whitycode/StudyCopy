@@ -2,15 +2,20 @@
 
 <div class="buttonPage">
 
-<button >暫存問卷</button>
-<br>
-<button
+<button (click)="saveNow()">暫存問卷</button>
 
-  routerLink="/createrPreview"
+<br>
+<!-- routerLink="../../questPreview" = [routerLink] = "['/questPreview']" -->
+<button
+  [routerLink] = "['/questPreview']"
   routerLinkActive="active"
   > 顯示問卷預覽
 </button>
 </div>
+
+
+
+
 @for(data of QuestPage;track data;let i = $index){
   <!-- 設定 i 抓 QuestPage 是 第幾筆 -->
   @if(data.CreatorData[0].QuestID === QcIDNow){

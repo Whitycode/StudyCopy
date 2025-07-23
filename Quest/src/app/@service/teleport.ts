@@ -29,7 +29,7 @@ export class Teleport {
   inputText03:string = "";
 
   // 用戶輸入資料
-  HelperJSONFile: QuestForm[] = [];
-
+  HelperJSONFile: QuestForm[] = []; //找一下這在哪
+  HJSON: QuestForm[] = [];
   constructor() { }
 }
