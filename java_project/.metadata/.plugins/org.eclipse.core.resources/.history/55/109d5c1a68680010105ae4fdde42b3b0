@@ -1,0 +1,18 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+//@SpringBootTest
+class DemoApplicationTests {
+
+	@Test
+	public void contextLoads() {
+		// Java 第一次出現的變數 一定要 宣告變數的資料型態
+		int x = 5;
+		System.out.println(x);
+		x = 20;
+		System.out.println(x);
+	}
+
+}

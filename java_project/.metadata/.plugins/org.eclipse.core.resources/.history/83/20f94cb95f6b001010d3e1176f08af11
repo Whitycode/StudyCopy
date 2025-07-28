@@ -1,0 +1,52 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Test;
+
+public class LoopTest {
+
+	@Test
+	public void forLoopTest() {
+		System.out.println("1~10 的加總");
+		int sum = 0;
+		for (int i = 1; i <= 10; i++) {
+			System.out.println("i = " + i);
+			System.out.println(sum = sum + i);
+		}
+	}
+
+	@Test
+	public void forLoopTest2() {
+
+		System.out.println("九九乘法表");
+		int sum = 0;
+		for (int i = 1; i <= 9; i++) {
+			for (int j = 1; j <= 9; j++) {
+//				System.out.printf(i + " x " + j + " = " + i * j + "  ");
+				System.out.printf("%d*%d=%2d ", i, j, (i * j));
+
+			}
+			System.out.println("");
+		}
+
+	}
+
+	@Test
+	public void whileTest() {
+
+		System.out.println("九九乘法表");
+		int sum = 0;
+		int i = 1;
+		int j = 1;
+		while (i <= 9) {
+			i = i++;
+			System.out.println(i);
+			while (j <= 9) {
+				j += j;
+				System.out.printf("%d*%d=%2d ", i, j, (i * j));
+			}
+			System.out.println("");
+		}
+
+	}
+
+}

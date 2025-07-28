@@ -1,0 +1,74 @@
+package com.example.demo;
+
+import java.util.Scanner;
+import org.junit.jupiter.api.Test;
+
+public class IfTest {
+	/**
+	 * @Test 是別人寫好的函式 要使用要記得 import <br>
+	 *       要能使用它 只能寫在 src/test/java 資料夾里使用 <br>
+	 *       public: 指方始可以被存取的權限 <br>
+	 *       void: 指該方法回傳的資料型態 <br>
+	 *       test():test 式方法名稱，小括號中表示存取該方法時需要的參數 <br>
+	 *       註解可以用 HTML的寫法<br>
+	 */
+
+	@Test
+	public void test() {
+		// 宣告可以取得從鍵盤輸入的變數
+		// 除了8個基本資料型態 & 字串(String)外，宣告變數都要使用 new
+		// 小括號中的 System.in 是 Scanner 的固定格式
+
+		Scanner scan = new Scanner(System.in);
+		// 透過 scan 取得輸入的年齡
+
+		System.out.println("請輸入年齡，輸入完按Enter");
+		int age = scan.nextInt();
+
+		if (age >= 20) {
+			System.out.println("符合買菸酒的年齡!!");
+		} else {
+			System.out.println("不符合買菸酒的年齡!!");
+		}
+
+	}
+
+	@Test
+	public void test2() {
+		int age = 30;
+		if (age >= 18) {
+			System.out.println("符合買酒年齡");
+		}
+		if (age >= 20) {
+			System.out.println("符合買菸年齡");
+			return;
+			// return 後 在生命週期裡
+			// 後面就不再執行
+
+		}
+		System.out.println("低於法定年齡不能買");
+
+	}
+
+	@Test
+	public void test3() {
+		int ticket = 100;
+		Scanner scanAge = new Scanner(System.in);
+		
+		System.out.println("買票請輸入年齡，輸入完按Enter");
+		int age = scanAge.nextInt();
+
+		if (age <= 6 || age >= 80) {
+			System.out.println("符合資格，票價為:" + ticket * 0.2);
+		}else if( age<=12||age >=60) {
+			System.out.println("票價打折為:" + (int)( ticket * 0.5));
+		}else {
+			System.out.println("票價是平票:" + ticket );
+
+		}
+		
+
+		
+
+	}
+}

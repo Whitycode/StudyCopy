@@ -1,0 +1,87 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+//@SpringBootTest
+class DemoApplicationTests {
+
+	@Test
+	public void contextLoads() {
+		// Java 第一次出現的變數 一定要 宣告變數的資料型態
+		int x = 5;
+		// syso + Alt + / 可以直接叫出來
+		System.out.println(x);  
+		
+		// 第二次使用同樣的變數，就不需要宣告
+		// { } 是一個生命週期
+		// 已宣告的變數 在有效範圍內(生命週期)，不需要再次宣告
+		x = 20;
+		System.out.println(x);
+	}
+	
+	@Test
+	public void test() {
+		int x = 5;
+		x = x + 3;
+		String y = "ABC";
+		y = y + x;
+		System.out.println(y);
+		System.out.println("x = " + x);
+	}
+	
+	@Test
+	public void test2() {
+		
+		int x = 5;
+		System.out.println("x = "+ x); 
+		
+		int y = x++;	// ++放 後面 會先傳 x的值; 再把 x+1
+		System.out.println("y = "+ y);  // y = 5;
+		System.out.println("x++ 會先傳 x給 y, x = "+ x ); 
+		
+		int Q = ++x;	// ++放 前面 先加完 +1之後 再傳 x的值
+		System.out.println("Q = "+ Q );
+		System.out.println("x = "+ x); 
+		
+		int z = ++y;	
+		System.out.println("y = "+ y); 
+		System.out.println("z = "+ z); 
+		System.out.println("x = "+ x + " ; y = "+ y +" ; z = " + z); 
+		System.out.printf("printf 要換行要打 \n");
+		System.out.printf("x = %d ; y = %d ; z = %d \n"+ x,y,z); 
+		 
+	}
+	
+	@Test
+	public void test3() {
+		int x = 5;
+		x = 100;
+		// 一般變數使用小駝峰
+		int fixedNumber = 100;
+		// 常數(固定不變的數) 的命名方式: 全大寫，不同字母間用底線串接
+		// 在宣告變數時在資料型態前面加上 final 表示最終的值 不會再更動
+		final int FIXED_NUMBER = 200;
+		// FIXED_NUMBER 已經宣告成 final，所以下一行再賦予新的值會報錯
+		// FIXED_NUMBER = 500;
+	}
+	
+	@Test 
+		public void test4() {
+		
+		byte b = 127;  			// -128 ~ -127
+		short s =12345;			
+		int x = 1234567890;
+		long y = 12345678901L;	// long可以比int長度更長 但要加上L
+		float z = 1.23F;   		// float 要加 f ; 大小寫都可以
+		double xNew = 1.23;		// double 可以不用標記字母
+	}
+	
+	@Test 
+	public void test5() {
+		char i = 'x';
+		char j = 65; // 會印出 A
+	}
+	
+
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="LoopTest" project="demo" tests="3" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.example.demo.LoopTest" incomplete="true" displayname="LoopTest" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.LoopTest]">
+    <testcase name="whileTest" classname="com.example.demo.LoopTest" incomplete="true" displayname="whileTest()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.LoopTest]/[method:whileTest()]"/>
+    <testcase name="forLoopTest" classname="com.example.demo.LoopTest" incomplete="true" displayname="forLoopTest()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.LoopTest]/[method:forLoopTest()]"/>
+    <testcase name="forLoopTest2" classname="com.example.demo.LoopTest" incomplete="true" displayname="forLoopTest2()" uniqueid="[engine:junit-jupiter]/[class:com.example.demo.LoopTest]/[method:forLoopTest2()]"/>
+  </testsuite>
+</testrun>

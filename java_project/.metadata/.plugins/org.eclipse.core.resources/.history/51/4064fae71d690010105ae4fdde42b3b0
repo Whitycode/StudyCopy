@@ -1,0 +1,31 @@
+package com.example.demo;
+import org.junit.jupiter.api.Test;
+
+public class IfTest {
+	/**
+	*	@Test 是別人寫好的函式 要使用要記得 import <br>
+	*	要能使用它 只能寫在 src/test/java 資料夾里使用 <br>
+	*	public: 指方始可以被存取的權限 <br>
+	*	void: 指該方法回傳的資料型態  <br>
+	*	test():test 式方法名稱，小括號中表示存取該方法時需要的參數 <br>
+	*	註解可以用 HTML的寫法<br>
+	*/
+	
+	
+	@Test 
+	public void test(){
+		int age = 18;
+		if(age>=20) {
+			System.out.println("符合買菸酒的年齡!!");
+		}else {
+			System.out.println("不符合買菸酒的年齡!!");
+		}
+		
+		
+		
+		
+	}
+	
+	
+
+}

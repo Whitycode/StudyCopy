@@ -1,0 +1,12 @@
+package com.example.demo;
+import org.junit.jupiter.api.Test;
+
+public class IfTest {
+	@Test // @Test 是別人寫好的函式 要使用要import
+	public void test(){
+		
+	}
+	
+	
+
+}

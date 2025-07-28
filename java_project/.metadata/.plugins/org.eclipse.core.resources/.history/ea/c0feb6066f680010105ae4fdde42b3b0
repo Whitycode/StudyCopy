@@ -1,0 +1,46 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+//@SpringBootTest
+class DemoApplicationTests {
+
+	@Test
+	public void contextLoads() {
+		// Java 第一次出現的變數 一定要 宣告變數的資料型態
+		int x = 5;
+		// syso + Alt + / 可以直接叫出來
+		System.out.println(x);  
+		
+		// 第二次使用同樣的變數，就不需要宣告
+		// { } 是一個生命週期
+		// 已宣告的變數 在有效範圍內(生命週期)，不需要再次宣告
+		x = 20;
+		System.out.println(x);
+	}
+	
+	@Test
+	public void test() {
+		int x = 5;
+		x = x + 3;
+		String y = "ABC";
+		y = y + x;
+		System.out.println(y);
+		System.out.println("x = " + x);
+	}
+	
+	@Test
+	public void test2() {
+		int x = 5;
+		System.out.println("x = "+ x); 
+		int y = x++;
+		System.out.println("x = "+ x); 
+		System.out.println("y = "+ y); 
+		
+		int z = ++y;
+		System.out.println(y);
+		System.out.println("x = " + x);
+	}
+	
+}

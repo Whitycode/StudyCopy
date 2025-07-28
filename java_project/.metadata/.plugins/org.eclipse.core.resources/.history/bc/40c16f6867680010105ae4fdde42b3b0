@@ -1,0 +1,15 @@
+package com.example.demo;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+//@SpringBootTest
+class DemoApplicationTests {
+
+	@Test
+	public void contextLoads() {
+		// Java一定要宣告變數 int 浮點數
+		int x = 5;
+	}
+
+}
