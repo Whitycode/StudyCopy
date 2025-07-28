@@ -20,15 +20,21 @@ export class QuestPreview {
 
   QuestPage: QuestForm[] = [];
 
- constructor(
-  private Teleport: Teleport
-){}
+  // 放轉存過來的 QcID 編號字串
+  QcID = "";
 
-ngOnInit():void{
-  this.QuestPage = this.Teleport.HelperJSONFile
-  console.log("service資料",this.Teleport.HelperJSONFile);
-  console.log(this.QuestPage);
-}
+
+  constructor(
+    private Teleport: Teleport
+  ) { }
+
+  ngOnInit(): void {
+    this.QuestPage = this.Teleport.HelperJSONFile
+    console.log("service資料", this.Teleport.HelperJSONFile);
+    console.log(this.QuestPage);
+
+
+  }
 
 
 }

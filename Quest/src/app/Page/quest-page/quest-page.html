@@ -18,7 +18,7 @@
 
 @for(data of QuestPage;track data;let i = $index){
   <!-- 設定 i 抓 QuestPage 是 第幾筆 -->
-  @if(data.CreatorData[0].QuestID === QcIDNow){
+  @if(data.CreatorData[0].QuestID == QcID){
 
     <!-- 使用者資料 -->
     <div style="display: flex;">
@@ -79,7 +79,7 @@
           type = "radio"
           [name]="'radioValue'+ QList"
           [value]="data3.value"
-          [(ngModel)]="data2.userAnswer"
+          [(ngModel)]="data2.radioAnswer"
           >
           {{data3.value}}
           <br>

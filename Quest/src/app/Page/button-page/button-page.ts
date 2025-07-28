@@ -149,8 +149,9 @@ export class ButtonPage {
         QuestionNumber: "QNum" + this.TotalNumber,
         QuestTitle: "",
         QType: 'input',
+        radioAnswer: "",
         answer: [
-          { value: "", select: "N", boolean: false },
+          { value: "", boolean: false, require: false },
         ]
       }
     );
@@ -178,9 +179,10 @@ export class ButtonPage {
         QuestionNumber: "QNum" + this.RadioNumber,
         QuestTitle: "",
         QType: 'radio',
+        radioAnswer: "",
         answer: [
-          { value: "", select: "N", boolean: false },
-          { value: "", select: "N", boolean: false },
+          { value: "", boolean: false, require: false },
+          { value: "", boolean: false, require: false },
         ]
       }
     );
@@ -209,9 +211,10 @@ export class ButtonPage {
         QuestionNumber: "QNum" + this.TotalNumber,
         QuestTitle: "",
         QType: 'checkbox',
+        radioAnswer: "",
         answer: [
-          { value: "", select: "N", boolean: false },
-          { value: "", select: "N", boolean: false },
+          { value: "", boolean: false, require: false },
+          { value: "", boolean: false, require: false },
         ]
       }
     );
@@ -226,7 +229,7 @@ export class ButtonPage {
 
   addOption(index: number) {
     this.QuestPage[0].QuestList[index].answer.push(
-      { value: "", select: "N", boolean: false },
+      { value: "",boolean: false, require: false },
     );
     console.log(this.QuestPage[0].QuestList);
   }

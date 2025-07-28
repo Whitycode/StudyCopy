@@ -70,26 +70,29 @@ export class Testpage {
           QuestionNumber: "",
           QuestTitle: "說說對本次問卷排版的想法:",
           QType: "input",
+          radioAnswer: "",
           answer: [
-            { value: "", select: "N", boolean: false }
+            { value: "", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "",
           QuestTitle: "你比較喜歡甚麼動物:",
           QType: "radio",
+          radioAnswer: "",
           answer: [
-            { value: "狗狗", select: "N", boolean: false },
-            { value: "貓貓", select: "N", boolean: false }
+            { value: "狗狗", boolean: false, require: false },
+            { value: "貓貓", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "",
           QuestTitle: "喜歡做的事情",
           QType: "checkbox",
+          radioAnswer: "",
           answer: [
-            { value: "畫圖畫到忘記時間", select: "N", boolean: false },
-            { value: "程式寫到天荒地老", select: "N", boolean: false }
+            { value: "畫圖畫到忘記時間", boolean: false, require: false },
+            { value: "程式寫到天荒地老", boolean: false, require: false }
           ]
         }
       ]

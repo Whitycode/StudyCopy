@@ -31,26 +31,29 @@ export class Filespace {
           QuestionNumber: "QNum0",
           QuestTitle: "說說對本次問卷排版的想法:",
           QType: "input",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false }
-          ],userAnswer:""
+            { value: "", boolean: false, require: false }
+          ]
         },
         {
           QuestionNumber: "QNum1",
           QuestTitle: "你比較喜歡甚麼動物:",
           QType: "radio",
+          radioAnswer:"",
           answer: [
-            { value: "狗狗", select: "N", boolean: false },
-            { value: "貓貓", select: "N", boolean: false },
+            { value: "狗狗", boolean: false, require: false },
+            { value: "貓貓", boolean: false, require: false },
           ]
         },
         {
           QuestionNumber: "QNum2",
           QuestTitle: "喜歡做的事情",
           QType: "checkbox",
+          radioAnswer:"",
           answer: [
-            { value: "畫圖畫到忘記時間", select: "N", boolean: false },
-            { value: "程式寫到天荒地老", select: "N", boolean: false },
+            { value: "畫圖畫到忘記時間", boolean: false, require: false },
+            { value: "程式寫到天荒地老", boolean: false, require: false },
           ]
         }
       ]
@@ -78,26 +81,29 @@ export class Filespace {
           QuestionNumber: "QNum1",
           QuestTitle: "請輸入任意文字",
           QType: "input",
+          radioAnswer:"",
           answer: [
-            { value: "文字哈哈", select: "N", boolean: false }
+            { value: "文字哈哈", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "QNum1",
           QuestTitle: "殘酷 2選1",
           QType: "radio",
+          radioAnswer:"",
           answer: [
-            { value: "今天Demo", select: "N", boolean: false },
-            { value: "天天颱風天", select: "N", boolean: false },
+            { value: "今天Demo", boolean: false, require: false },
+            { value: "天天颱風天", boolean: false, require: false },
           ]
         },
         {
           QuestionNumber: "QNum2",
           QuestTitle: "今天想吃啥",
           QType: "checkbox",
+          radioAnswer:"",
           answer: [
-            { value: "7-11", select: "N", boolean: false },
-            { value: "return 便當", select: "N", boolean: false },
+            { value: "7-11", boolean: false, require: false },
+            { value: "return 便當", boolean: false, require: false },
           ]
         }
       ]
@@ -125,26 +131,29 @@ export class Filespace {
           QuestionNumber: "QNum1",
           QuestTitle: "請輸入任意文字",
           QType: "input",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false }
+            { value: "", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "QNum1",
           QuestTitle: "單選題",
           QType: "radio",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
         {
           QuestionNumber: "QNum2",
           QuestTitle: "複選題",
           QType: "checkbox",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         }
       ]
@@ -172,26 +181,29 @@ export class Filespace {
           QuestionNumber: "QNum1",
           QuestTitle: "請輸入任意文字",
           QType: "input",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false }
+            { value: "", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "QNum1",
           QuestTitle: "單選題",
           QType: "radio",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
         {
           QuestionNumber: "QNum2",
           QuestTitle: "複選題",
           QType: "checkbox",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         }
       ]
@@ -219,26 +231,29 @@ export class Filespace {
           QuestionNumber: "QNum1",
           QuestTitle: "請輸入任意文字",
           QType: "input",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false }
+            { value: "", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "QNum1",
           QuestTitle: "單選題",
           QType: "radio",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
         {
           QuestionNumber: "QNum2",
           QuestTitle: "複選題",
           QType: "checkbox",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         }
       ]
@@ -266,26 +281,29 @@ export class Filespace {
           QuestionNumber: "QNum1",
           QuestTitle: "請輸入任意文字",
           QType: "input",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false }
+            { value: "", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "QNum1",
           QuestTitle: "單選題",
           QType: "radio",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
         {
           QuestionNumber: "QNum2",
           QuestTitle: "複選題",
           QType: "checkbox",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         }
 
@@ -314,26 +332,29 @@ export class Filespace {
           QuestionNumber: "QNum1",
           QuestTitle: "請輸入任意文字",
           QType: "input",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false }
+            { value: "", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "QNum1",
           QuestTitle: "單選題",
           QType: "radio",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
         {
           QuestionNumber: "QNum2",
           QuestTitle: "複選題",
           QType: "checkbox",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
 
@@ -362,26 +383,29 @@ export class Filespace {
           QuestionNumber: "QNum1",
           QuestTitle: "請輸入任意文字",
           QType: "input",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false }
+            { value: "", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "QNum1",
           QuestTitle: "單選題",
           QType: "radio",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
         {
           QuestionNumber: "QNum2",
           QuestTitle: "複選題",
           QType: "checkbox",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
 
@@ -410,31 +434,34 @@ export class Filespace {
           QuestionNumber: "QNum1",
           QuestTitle: "請輸入任意文字",
           QType: "input",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false }
+            { value: "", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "QNum1",
           QuestTitle: "單選題",
           QType: "radio",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
         {
           QuestionNumber: "QNum2",
           QuestTitle: "複選題",
           QType: "checkbox",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
 
       ]
-    },{
+    }, {
       CreatorData: [
         {
           QuestID: "QcID-0010",
@@ -457,31 +484,34 @@ export class Filespace {
           QuestionNumber: "QNum1",
           QuestTitle: "請輸入任意文字",
           QType: "input",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false }
+            { value: "", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "QNum1",
           QuestTitle: "單選題",
           QType: "radio",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
         {
           QuestionNumber: "QNum2",
           QuestTitle: "複選題",
           QType: "checkbox",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
 
       ]
-    },{
+    }, {
       CreatorData: [
         {
           QuestID: "QcID-0011",
@@ -504,26 +534,29 @@ export class Filespace {
           QuestionNumber: "QNum1",
           QuestTitle: "請輸入任意文字",
           QType: "input",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false }
+            { value: "", boolean: false, require: false }
           ]
         },
         {
           QuestionNumber: "QNum1",
           QuestTitle: "單選題",
           QType: "radio",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
         {
           QuestionNumber: "QNum2",
           QuestTitle: "複選題",
           QType: "checkbox",
+          radioAnswer:"",
           answer: [
-            { value: "", select: "N", boolean: false },
-            { value: "", select: "N", boolean: false },
+            { value: "", boolean: false, require: false },
+            { value: "", boolean: false, require: false },
           ]
         },
 

@@ -4,8 +4,8 @@
 // JSON 空包裹 interface
 export interface Answer {
   value: string;
-  select: string;
   boolean: boolean;
+  require: boolean;
 }
 
 
@@ -16,7 +16,7 @@ export interface Question {
   QuestTitle: string;
   QType: string;
   answer: Answer[];  // 用到上面的 Answer 型別
-  userAnswer?: string; // userAnswer 抓 radio是否勾選; 有勾選會傳 value的字串
+  radioAnswer: string; // userAnswer 抓 radio是否勾選; 有勾選會傳 value的字串
 }
 
 export interface Creator {
@@ -67,8 +67,11 @@ export interface QuestForm {
 //         QuestionNumber: "QNum0",
 //         QuestTitle: "請輸入任意文字",
 //         QType: "",
+//         radioAnsewr:"",
 //         answer: [
-//           { value: "", select: "N", boolean: false }
+//           { value: "", boolean: false, require: false },
+//           { value: "", boolean: false, require: false }
+
 //         ]
 //       }
 //     ]
